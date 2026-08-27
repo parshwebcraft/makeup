@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 253 251 247;
+    --foreground: 28 22 20;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-jakarta), system-ui, sans-serif;
+    color: #1C1614;
+    background-color: #FDFBF7;
+  }
+
+  body {
+    background-color: #FDFBF7;
+    color: #1C1614;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom Gold Accent Gradients & Borders */
+.gold-border {
+  border-image: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #9E7B3B 100%) 1;
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #B8860B 0%, #C5A059 50%, #8B6508 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4C3AA;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Hide scrollbar for clean UI elements */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
