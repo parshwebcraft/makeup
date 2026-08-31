@@ -31,6 +31,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
+    { name: "Packages", href: "#packages" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Reviews", href: "#reviews" },
     { name: "Contact", href: "#contact" },
@@ -65,12 +66,12 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-7">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm tracking-widest uppercase transition-colors duration-300 hover:text-gold font-light ${
+                className={`text-xs sm:text-sm tracking-widest uppercase transition-colors duration-300 hover:text-gold font-light ${
                   isScrolled ? "text-espresso/80" : "text-white/90"
                 }`}
               >
@@ -143,20 +144,20 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                   </button>
                 </div>
 
-                <nav className="mt-8 flex flex-col space-y-6">
+                <nav className="mt-8 flex flex-col space-y-5">
                   {navLinks.map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="text-lg font-serif tracking-wider text-espresso/90 hover:text-gold transition-colors border-b border-champagne/20 pb-2"
+                      className="text-base font-serif tracking-wider text-espresso/90 hover:text-gold transition-colors border-b border-champagne/20 pb-2"
                     >
                       {link.name}
                     </Link>
                   ))}
                 </nav>
 
-                <div className="mt-8 space-y-1">
+                <div className="mt-6 space-y-1">
                   <p className="text-xs text-espresso/60 uppercase tracking-widest">
                     Location
                   </p>
@@ -196,7 +197,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-espresso text-ivory py-3 px-4 shadow-2xl border-t border-gold/30 flex items-center justify-between">
         <div className="flex flex-col">
           <span className="text-xs font-serif tracking-wider text-champagne">BRIGHT & BEAUTY</span>
-          <span className="text-[10px] text-ivory/70 font-sans">Certified MUA • Udaipur</span>
+          <span className="text-[10px] text-ivory/70 font-sans">Titardi, Udaipur</span>
         </div>
         <button
           onClick={() => onOpenBooking()}

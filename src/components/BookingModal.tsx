@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Sparkles, MessageCircle } from "lucide-react";
+import { X, Sparkles, MessageCircle } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
 
 interface BookingModalProps {
@@ -17,7 +17,7 @@ export function BookingModal({ isOpen, onClose, initialService = "" }: BookingMo
     phone: "",
     date: "",
     timeSlot: "Morning (8 AM - 12 PM)",
-    service: initialService || "Bridal Makeup",
+    service: initialService || "HD Bridal Package (₹15,000)",
     location: "",
     notes: "",
   });
@@ -73,7 +73,7 @@ export function BookingModal({ isOpen, onClose, initialService = "" }: BookingMo
 📞 *Phone*: ${formData.phone.trim()}
 📅 *Event Date*: ${formData.date}
 ⏰ *Preferred Time*: ${formData.timeSlot}
-✨ *Service*: ${formData.service}
+✨ *Package / Service*: ${formData.service}
 📍 *Venue/Location*: ${formData.location.trim() || "Udaipur"}
 ${formData.notes.trim() ? `💬 *Notes*: ${formData.notes.trim()}` : ""}
 
@@ -130,7 +130,7 @@ Please confirm your availability for my date!`;
               Book an Appointment
             </h3>
             <p className="text-xs text-ivory/70 font-light mt-1">
-              Select your services & date to confirm booking directly with Jiya Vadhwani via WhatsApp.
+              Select your package & date to confirm booking directly with Jiya Vadhwani via WhatsApp.
             </p>
           </div>
 
@@ -203,15 +203,15 @@ Please confirm your availability for my date!`;
                   <option value="Morning (8 AM - 12 PM)">Morning (8 AM - 12 PM)</option>
                   <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
                   <option value="Evening (4 PM - 9 PM)">Evening (4 PM - 9 PM)</option>
-                  <option value="Full Day Bridal Event">Full Day Bridal Event</option>
+                  <option value="Full Day Event">Full Day Event</option>
                 </select>
               </div>
             </div>
 
-            {/* Purpose / Service */}
+            {/* Purpose / Package */}
             <div>
               <label className="block text-xs uppercase tracking-wider text-ivory/90 mb-1.5 font-light">
-                Purpose / Service Required <span className="text-gold">*</span>
+                Package / Service Required <span className="text-gold">*</span>
               </label>
               <select
                 name="service"
@@ -219,11 +219,23 @@ Please confirm your availability for my date!`;
                 onChange={handleChange}
                 className="w-full bg-[#231B18] border border-gold/30 focus:border-gold text-ivory text-sm px-4 py-2.5 outline-none transition-colors rounded-none"
               >
-                <option value="Bridal Makeup">Bridal Makeup</option>
-                <option value="Party & Reception Makeup">Party & Reception Makeup</option>
-                <option value="HD Camera-Ready Makeup">HD Camera-Ready Makeup</option>
-                <option value="Destination Wedding Travel">Destination Wedding Travel</option>
-                <option value="Trial & Personal Consultation">Trial & Personal Consultation</option>
+                <optgroup label="Bridal Packages">
+                  <option value="HD Bridal Package (₹15,000)">HD Bridal Package — ₹15,000</option>
+                  <option value="Basic Bridal Package (₹10,000)">Basic Bridal Package — ₹10,000</option>
+                </optgroup>
+                <optgroup label="Pre-Wedding Shoots">
+                  <option value="1-Day Pre-Wedding Shoot (₹8,000)">1-Day Pre-Wedding Shoot — ₹8,000</option>
+                  <option value="2-Day Pre-Wedding Shoot (₹15,000)">2-Day Pre-Wedding Shoot — ₹15,000</option>
+                </optgroup>
+                <optgroup label="Family & Guest Makeup">
+                  <option value="Premium Party Glam (₹7,000)">Premium Party Glam — ₹7,000</option>
+                  <option value="Premium Sider Makeup (₹5,000)">Premium Sider Makeup — ₹5,000</option>
+                  <option value="Basic Guest Makeup (₹2,500)">Basic Guest Makeup — ₹2,500</option>
+                </optgroup>
+                <optgroup label="Custom & Destination">
+                  <option value="Destination Wedding Travel">Destination Wedding Travel</option>
+                  <option value="Model Shoot Makeup">Model Shoot Makeup</option>
+                </optgroup>
               </select>
             </div>
 
@@ -252,7 +264,7 @@ Please confirm your availability for my date!`;
                 value={formData.notes}
                 onChange={handleChange}
                 rows={2}
-                placeholder="Mention outfit colors, hair preferences, or family member makeup counts..."
+                placeholder="Mention outfit colors, hair preferences, or family member count..."
                 className="w-full bg-[#231B18] border border-gold/30 focus:border-gold text-ivory text-sm px-4 py-2.5 outline-none transition-colors rounded-none placeholder:text-ivory/40 resize-none"
               />
             </div>
@@ -272,7 +284,7 @@ Please confirm your availability for my date!`;
           {/* Footer Note */}
           <div className="mt-4 text-center">
             <p className="text-[11px] text-champagne/70 font-light">
-              Direct Contact: <span className="text-gold font-medium">{BRAND_DATA.phoneNumberDisplay}</span> • Udaipur, Rajasthan
+              Direct Contact: <span className="text-gold font-medium">{BRAND_DATA.phoneNumberDisplay}</span> • Titardi, Udaipur
             </p>
           </div>
         </motion.div>

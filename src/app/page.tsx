@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { TrustStrip } from "@/components/TrustStrip";
 import { AboutSection } from "@/components/AboutSection";
 import { ServicesSection } from "@/components/ServicesSection";
+import { PackagesSection } from "@/components/PackagesSection";
 import { PortfolioGallery } from "@/components/PortfolioGallery";
 import { BridalExperience } from "@/components/BridalExperience";
 import { WhyUsSection } from "@/components/WhyUsSection";
@@ -41,6 +42,7 @@ export default function Home() {
       <TrustStrip />
       <AboutSection />
       <ServicesSection onOpenBooking={handleOpenBooking} />
+      <PackagesSection onOpenBooking={handleOpenBooking} />
       <PortfolioGallery />
       <BridalExperience onOpenBooking={handleOpenBooking} />
       <WhyUsSection />

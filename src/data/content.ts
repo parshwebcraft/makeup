@@ -7,6 +7,13 @@ export interface PortfolioItem {
   location?: string;
 }
 
+export interface PackageDetail {
+  name: string;
+  price: string;
+  features: string[];
+  recommended?: boolean;
+}
+
 export interface ServiceItem {
   id: string;
   title: string;
@@ -14,6 +21,7 @@ export interface ServiceItem {
   description: string;
   image: string;
   features: string[];
+  packages?: PackageDetail[];
 }
 
 export interface TestimonialItem {
@@ -46,12 +54,14 @@ export const BRAND_DATA = {
   artist: "Jiya Vadhwani",
   title: "Professional Makeup Artist",
   certification: "Certified MUA by Samaira Sandhu",
-  location: "Udaipur, Rajasthan",
+  location: "Titardi, Udaipur, Rajasthan",
+  email: "Booking@jiyavadhwani.com",
   instagramHandle: "@_bright_and_beauty_",
   instagramUrl: "https://www.instagram.com/_bright_and_beauty_/",
   whatsappNumber: "918005649056",
   phoneNumberDisplay: "+91 80056 49056",
   whatsappUrl: "https://wa.me/918005649056?text=Hi%20Jiya%2C%20I%20found%20Bright%20%26%20Beauty%20online%20and%20would%20like%20to%20enquire%20about%20makeup%20services.",
+  tagline: "Bring Out Your Inner Beauty with Empowering and Inspiring Makeup!",
   followersCount: "10K+",
   postsCount: "400+",
 };
@@ -60,9 +70,9 @@ export const HERO_DATA = {
   badge: "Certified MUA by Samaira Sandhu",
   titleLine1: "Bright & Beauty",
   titleLine2: "Luxury Makeup Artistry",
-  subtitle: "for Your Most Beautiful Moments",
-  servicesOverview: "Bridal • Party • HD Makeup • Destination Weddings",
-  location: "Udaipur, Rajasthan",
+  subtitle: "Bring Out Your Inner Beauty with Empowering and Inspiring Makeup",
+  servicesOverview: "Bridal Packages • Pre-Wedding Shoots • Family & Guest Makeup • Destination Weddings",
+  location: "Titardi, Udaipur, Rajasthan",
   ctaPrimary: "Book Your Appointment",
   ctaSecondary: "View Portfolio",
   heroImage: "/images/portfolio/img21.jpg",
@@ -76,13 +86,14 @@ export const TRUST_STATS = [
 ];
 
 export const ABOUT_DATA = {
-  heading: "Where Beauty Meets Artistry",
-  paragraph1: "With a passion for creating timeless bridal and occasion looks, Jiya Vadhwani brings together refined makeup artistry, attention to detail and a personalized approach for every client.",
-  paragraph2: "Trained under the legendary Samaira Sandhu, Jiya combines international technique with rich cultural aesthetics to enhance your natural features without heavy masking. Whether it is an opulent palace wedding at Lake Pichola or an intimate celebration, every look is crafted to withstand climate, emotions, and HD camera lenses.",
+  heading: "Bring Out Your Inner Beauty",
+  paragraph1: "Thank you for considering Bright & Beauty for your special occasion. With a passion for creating timeless bridal and occasion looks, Jiya Vadhwani offers luxury makeup services tailored to bring out the best version of you.",
+  paragraph2: "Trained under the legendary Samaira Sandhu, Jiya combines international technique with rich cultural aesthetics to enhance your natural features without heavy masking. Whether it is an opulent palace wedding at Lake Pichola or a pre-wedding shoot, every look is crafted to withstand climate, emotions, and 4K HD camera lenses.",
   highlights: [
     "Certified MUA by Samaira Sandhu Academy",
-    "Tailored bridal & destination wedding packages",
-    "Exclusively high-end products (MAC, NARS, Charlotte Tilbury)",
+    "High-End & Premium International Products",
+    "Advanced Hair Styling, Extensions & Accessories included",
+    "Complete Saree / Lehenga Draping included",
     "Strict hygiene protocols & customized skin preparation",
   ],
   image: "/images/portfolio/img26.jpg",
@@ -93,36 +104,129 @@ export const ABOUT_DATA = {
 export const SERVICES: ServiceItem[] = [
   {
     id: "bridal",
-    title: "Bridal Makeup",
+    title: "Bridal Makeup Packages",
     tagline: "Timeless Bridal Perfection",
-    description: "Timeless bridal looks crafted around your features, outfit and wedding aesthetic. Designed for long-lasting comfort and royal elegance.",
+    description: "Tailored bridal packages designed around your features, outfit, and wedding aesthetic for long-lasting comfort and royal elegance.",
     image: "/images/portfolio/img21.jpg",
-    features: ["Personalized skin prep", "Drape & jewelry setting", "HD waterproof finish", "Hair styling coordination"],
+    features: [
+      "High-End & Premium International Products",
+      "Advanced Hair Styling & Hair Extensions",
+      "Hair Accessories included",
+      "Saree / Lehenga Draping",
+      "HD Finish Makeup Options",
+    ],
+    packages: [
+      {
+        name: "Basic Bridal Package",
+        price: "₹10,000",
+        features: [
+          "High-End & International Products",
+          "Advanced Hair Styling",
+          "Hair Extensions & Accessories",
+          "Saree/Lehenga Draping",
+        ],
+      },
+      {
+        name: "HD Bridal Package",
+        price: "₹15,000",
+        recommended: true,
+        features: [
+          "Premium International Products",
+          "HD Finish Camera-Ready Makeup",
+          "Advanced Hair Styling",
+          "Hair Extensions & Accessories",
+          "Saree/Lehenga Draping",
+        ],
+      },
+    ],
   },
   {
     id: "party",
-    title: "Party Makeup",
-    tagline: "Glamour for Special Occasions",
-    description: "Elegant glam for celebrations, receptions, engagements and special occasions that turns heads while feeling weightless.",
+    title: "Family & Guest Makeup",
+    tagline: "Glamour for Family & Siders",
+    description: "Elegant makeup for mothers, sisters, siders, and guests attending engagements, receptions, and celebrations.",
     image: "/images/portfolio/img1.jpg",
-    features: ["Engagement & Reception glam", "Cocktail & sangeet looks", "Custom lip & eye artistry", "Lash enhancement"],
+    features: [
+      "Basic & Premium Makeup options",
+      "Professional Hair Styling",
+      "Hair Extensions & Accessories",
+      "Saree / Dupatta Draping",
+    ],
+    packages: [
+      {
+        name: "Basic Guest Makeup",
+        price: "₹2,500",
+        features: ["Professional Makeup", "Standard Hair Styling", "Draping Support"],
+      },
+      {
+        name: "Premium Sider Makeup",
+        price: "₹5,000",
+        features: [
+          "Premium International Products",
+          "Advanced Hair Styling",
+          "Hair Extensions & Accessories",
+          "Saree/Lehenga Draping",
+        ],
+      },
+      {
+        name: "Premium Party Glam",
+        price: "₹7,000",
+        features: [
+          "High-End Professional Makeup",
+          "Advanced Hair Styling",
+          "Extensions & Premium Accessories",
+          "Custom Lip & Eye Artistry",
+        ],
+      },
+    ],
   },
   {
-    id: "hd",
-    title: "HD Makeup",
-    tagline: "Flawless HD Camera Finish",
-    description: "Camera-ready makeup designed for flawless high-definition photography, videography, and all-day sweat-resistant wear.",
+    id: "pre-wedding",
+    title: "Pre-Wedding Shoot Makeup",
+    tagline: "Camera-Ready Outdoor Glam",
+    description: "Flawless photography makeup crafted for outdoor light, location changes, and long-lasting pre-wedding shoots.",
     image: "/images/portfolio/img30.jpg",
-    features: ["4K/8K camera optimization", "Airbrush-like seamless skin", "Zero flashback formulation", "16+ hour duration"],
+    features: [
+      "Full Day & Multi-Day Shoot Coverage",
+      "Touch-up Support & Hair Styling",
+      "Outfit Change Adjustments",
+      "HD Camera Flashback-Proof",
+    ],
+    packages: [
+      {
+        name: "1-Day Pre-Wedding Shoot",
+        price: "₹8,000",
+        features: ["Full Day Shoot Makeup", "Advanced Hair Styling", "On-Location Touch-ups", "Draping & Accessories"],
+      },
+      {
+        name: "2-Day Pre-Wedding Shoot",
+        price: "₹15,000",
+        recommended: true,
+        features: ["2 Days Complete Shoot Coverage", "Multiple Look Transformations", "Advanced Hair Styling & Extensions", "Draping & On-Location Support"],
+      },
+    ],
   },
   {
     id: "destination",
-    title: "Destination Weddings",
-    tagline: "Global Travel Services",
-    description: "Luxury makeup services for brides celebrating their wedding beyond Udaipur. Full entourage & multiple function management.",
+    title: "Destination & Model Shoots",
+    tagline: "Global Travel & Editorial Services",
+    description: "Luxury makeup services for brides celebrating their wedding beyond Udaipur, plus high-fashion model shoot makeup.",
     image: "/images/portfolio/img16.jpg",
-    features: ["On-location setup anywhere", "Multi-event look continuity", "Family & bridesmaid packages", "Touch-up kit provided"],
+    features: [
+      "On-Location Setup Anywhere in India & Abroad",
+      "Multi-Event Look Continuity",
+      "Model Shoot & Editorial Makeup",
+      "Entourage & Family Package Discounts",
+    ],
   },
+];
+
+export const TERMS_AND_CONDITIONS = [
+  "Pick-up & Drop charges for on-venue services will be borne by the client.",
+  "20% advance payment is required to confirm the booking.",
+  "The remaining balance amount must be paid on the event day.",
+  "Advance payment is non-refundable under any circumstances.",
+  "Last-minute changes in services at the venue will not be entertained.",
 ];
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
@@ -250,7 +354,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     id: "1",
     quote: "Jiya understood exactly what I wanted and made me feel so confident on my wedding day. My makeup stayed intact from 3 PM until late night rituals at Jagmandir!",
     brideName: "Ananya Sharma",
-    weddingType: "Bridal Look",
+    weddingType: "Bridal Package",
     venue: "Jagmandir Island Palace, Udaipur",
     rating: 5,
     date: "November 2025",
@@ -329,32 +433,32 @@ export const INSTAGRAM_POSTS: InstagramPost[] = [
 export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq-1",
-    question: "How early should I book my bridal makeup?",
-    answer: "Since auspicious wedding dates in Udaipur get booked up to 6–9 months in advance, we recommend securing your date as soon as your venue and wedding functions are finalized to ensure exclusivity.",
+    question: "What packages do you offer for bridal makeup?",
+    answer: "We offer the Basic Bridal Package (₹10,000) and the HD Bridal Package (₹15,000). Both include international products, advanced hair styling, extensions, accessories, and complete saree/lehenga draping.",
   },
   {
     id: "faq-2",
+    question: "Do you offer pre-wedding shoot makeup packages?",
+    answer: "Yes, we provide Pre-Wedding Shoot Makeup at ₹8,000 for 1-day shoots and ₹15,000 for 2-day shoots, including on-location touch-ups and hair styling.",
+  },
+  {
+    id: "faq-3",
+    question: "What are your family and guest makeup rates?",
+    answer: "We offer Basic Guest Makeup at ₹2,500, Premium Sider Makeup at ₹5,000, and Premium Party Glam at ₹7,000 per person.",
+  },
+  {
+    id: "faq-4",
+    question: "What are your booking terms and advance payment policies?",
+    answer: "A 20% advance payment is required to confirm your booking date (non-refundable). The remaining balance is payable on the event day. Pick-up & drop charges for on-venue locations are borne by the client.",
+  },
+  {
+    id: "faq-5",
     question: "Do you travel for destination weddings outside Udaipur?",
     answer: "Yes, Jiya Vadhwani and her team travel globally for destination weddings. We regularly service weddings across Rajasthan, Mumbai, Delhi, Goa, and international destinations.",
   },
   {
-    id: "faq-3",
-    question: "Do you offer party and engagement makeup for family members?",
-    answer: "Absolutely. We offer tailored packages for mothers, sisters, and bridesmaids alongside the bride. Our associate MUAs ensure your entire entourage looks cohesive and stunning.",
-  },
-  {
-    id: "faq-4",
-    question: "What is HD makeup and why is it recommended for brides?",
-    answer: "HD (High Definition) makeup uses ultra-fine, light-reflecting pigments that hide imperfections without creating a heavy mask. It prevents camera flashback under high-tech 4K/8K cameras and lasts effortlessly through sweat and long rituals.",
-  },
-  {
-    id: "faq-5",
-    question: "How can I check availability for my event dates?",
-    answer: "You can click on 'Book Appointment' or 'Book via WhatsApp' on our website to fill in your event details. Send us your date, location, and required services, and Jiya will personally respond with availability.",
-  },
-  {
     id: "faq-6",
-    question: "Can I schedule a consultation before booking?",
-    answer: "Yes, we encourage virtual or in-person consultations to discuss your outfits, jewelry, skin type, and vision prior to finalizing your bridal package.",
+    question: "How can I check availability for my dates?",
+    answer: "Click 'Book Appointment' or WhatsApp us directly at +91 80056 49056 with your date and location to check Jiya's schedule.",
   },
 ];
