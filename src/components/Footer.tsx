@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, MessageCircle, Phone } from "lucide-react";
+import { Instagram, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
 
 interface FooterProps {
@@ -9,13 +9,23 @@ interface FooterProps {
 }
 
 export function Footer({ onOpenBooking }: FooterProps) {
-  const footerLinks = [
+  const footerNavLinks = [
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
+    { name: "Packages", href: "#packages" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Reviews", href: "#reviews" },
     { name: "Contact", href: "#contact" },
+  ];
+
+  const legalLinks = [
+    { name: "Terms & Conditions", href: "/terms" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Refund Policy", href: "/refund" },
+    { name: "Disclaimer", href: "/disclaimer" },
+    { name: "Cookie Policy", href: "/cookies" },
+    { name: "Support & Help", href: "/support" },
   ];
 
   return (
@@ -24,7 +34,7 @@ export function Footer({ onOpenBooking }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-champagne/10">
           
           {/* Brand Col */}
-          <div className="md:col-span-5 flex flex-col justify-between">
+          <div className="md:col-span-4 flex flex-col justify-between">
             <div>
               <span className="font-serif text-3xl tracking-widest text-ivory block uppercase">
                 Bright & Beauty
@@ -37,23 +47,29 @@ export function Footer({ onOpenBooking }: FooterProps) {
               </p>
             </div>
 
-            <div className="mt-6 text-xs text-champagne/80 font-light space-y-1">
+            <div className="mt-6 text-xs text-champagne/80 font-light space-y-1.5">
               <p className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-gold" />
+                <Phone className="w-3.5 h-3.5 text-gold shrink-0" />
                 <span>Contact: <strong>{BRAND_DATA.phoneNumberDisplay}</strong></span>
               </p>
-              <p>Certified MUA by Samaira Sandhu</p>
-              <p>Location: Udaipur, Rajasthan, India</p>
+              <p className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-gold shrink-0" />
+                <span>Email: <strong>{BRAND_DATA.email}</strong></span>
+              </p>
+              <p className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-gold shrink-0" />
+                <span>{BRAND_DATA.location}</span>
+              </p>
             </div>
           </div>
 
           {/* Navigation Links */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-3">
             <p className="text-xs uppercase tracking-[0.2em] font-medium text-gold mb-4">
               Quick Navigation
             </p>
-            <ul className="grid grid-cols-2 gap-3 mb-6">
-              {footerLinks.map((link) => (
+            <ul className="space-y-2 mb-6">
+              {footerNavLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -73,12 +89,31 @@ export function Footer({ onOpenBooking }: FooterProps) {
             </button>
           </div>
 
-          {/* Socials & Connect */}
+          {/* Legal & Compliance Section */}
           <div className="md:col-span-3">
             <p className="text-xs uppercase tracking-[0.2em] font-medium text-gold mb-4">
-              Connect With Us
+              Legal & Support
             </p>
-            <div className="flex items-center gap-4 mb-6">
+            <ul className="space-y-2">
+              {legalLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-xs text-ivory/70 hover:text-gold transition-colors font-light tracking-wide"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Socials & Connect */}
+          <div className="md:col-span-2">
+            <p className="text-xs uppercase tracking-[0.2em] font-medium text-gold mb-4">
+              Social Links
+            </p>
+            <div className="flex items-center gap-3 mb-6">
               <a
                 href={BRAND_DATA.instagramUrl}
                 target="_blank"
@@ -98,8 +133,8 @@ export function Footer({ onOpenBooking }: FooterProps) {
                 <MessageCircle className="w-4 h-4" />
               </a>
             </div>
-            <p className="text-xs text-ivory/60 font-light">
-              Available for bridal consultations, trial bookings, and destination travel arrangements.
+            <p className="text-[11px] text-ivory/60 font-light leading-normal">
+              Official Udaipur, Rajasthan Jurisdiction.
             </p>
           </div>
         </div>
