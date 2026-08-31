@@ -3,9 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles, Calendar } from "lucide-react";
-import { PROCESS_STEPS, BRAND_DATA } from "@/data/content";
+import { PROCESS_STEPS } from "@/data/content";
 
-export function BridalExperience() {
+interface BridalExperienceProps {
+  onOpenBooking: (serviceName?: string) => void;
+}
+
+export function BridalExperience({ onOpenBooking }: BridalExperienceProps) {
   return (
     <section className="py-24 bg-espresso text-ivory relative overflow-hidden">
       {/* Subtle gold glow accent */}
@@ -59,15 +63,13 @@ export function BridalExperience() {
 
             {/* Action CTA */}
             <div className="mt-10">
-              <a
-                href={BRAND_DATA.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => onOpenBooking("Bridal Makeup")}
                 className="inline-flex items-center gap-3 px-8 py-4 bg-gold hover:bg-gold-bright text-white text-xs uppercase tracking-[0.25em] font-medium transition-all shadow-gold-glow"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Plan My Bridal Look</span>
-              </a>
+              </button>
             </div>
           </motion.div>
 
@@ -82,8 +84,8 @@ export function BridalExperience() {
             <div className="relative aspect-[3/4] w-full border border-gold/30 p-3 sm:p-4 bg-espresso-light">
               <div className="relative w-full h-full overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop"
-                  alt="Udaipur Bridal Experience by Bright & Beauty"
+                  src="/images/portfolio/img21.jpg"
+                  alt="Udaipur Bridal Experience by Bright & Beauty Jiya Vadhwani"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 hover:scale-105"

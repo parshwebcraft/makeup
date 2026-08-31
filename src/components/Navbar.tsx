@@ -6,7 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, MessageCircle, Calendar } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
 
-export function Navbar() {
+interface NavbarProps {
+  onOpenBooking: (serviceName?: string) => void;
+}
+
+export function Navbar({ onOpenBooking }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -35,7 +39,7 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
             ? "bg-ivory/85 backdrop-blur-md border-b border-champagne/40 py-3 shadow-luxury"
             : "bg-gradient-to-b from-espresso/40 to-transparent py-5 text-white"
@@ -76,11 +80,18 @@ export function Navbar() {
           </nav>
 
           {/* Right side CTA Button */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center gap-4">
             <a
-              href={BRAND_DATA.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${BRAND_DATA.phoneNumberDisplay.replace(/\s+/g, '')}`}
+              className={`text-xs font-light tracking-wider hover:text-gold transition-colors ${
+                isScrolled ? "text-espresso/70" : "text-white/80"
+              }`}
+            >
+              {BRAND_DATA.phoneNumberDisplay}
+            </a>
+
+            <button
+              onClick={() => onOpenBooking()}
               className={`px-5 py-2.5 text-xs uppercase tracking-[0.2em] font-medium border transition-all duration-300 rounded-none flex items-center gap-2 ${
                 isScrolled
                   ? "border-gold text-espresso hover:bg-gold hover:text-white"
@@ -89,7 +100,7 @@ export function Navbar() {
             >
               <Calendar className="w-3.5 h-3.5" />
               <span>Book Your Date</span>
-            </a>
+            </button>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -154,24 +165,35 @@ export function Navbar() {
                   ))}
                 </nav>
 
-                <div className="mt-8">
-                  <p className="text-xs text-espresso/60 uppercase tracking-widest mb-1">
-                    Location
+                <div className="mt-8 space-y-1">
+                  <p className="text-xs text-espresso/60 uppercase tracking-widest">
+                    Direct Contact
                   </p>
-                  <p className="text-sm font-serif text-espresso">Udaipur, Rajasthan</p>
-                  <p className="text-xs text-gold mt-2 font-light">Certified MUA by Samaira Sandhu</p>
+                  <p className="text-sm font-serif text-espresso">{BRAND_DATA.phoneNumberDisplay}</p>
+                  <p className="text-xs text-gold font-light">{BRAND_DATA.location}</p>
                 </div>
               </div>
 
               <div className="space-y-3 pt-6 border-t border-champagne/40">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenBooking();
+                  }}
+                  className="w-full py-3 bg-gold text-white text-xs uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 hover:bg-gold-muted transition-colors"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book Appointment</span>
+                </button>
+
                 <a
                   href={BRAND_DATA.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 bg-gold text-white text-xs uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 hover:bg-gold-muted transition-colors"
+                  className="w-full py-3 border border-espresso/30 text-espresso text-xs uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 hover:bg-espresso hover:text-white transition-colors"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>Enquire via WhatsApp</span>
+                  <span>WhatsApp Direct</span>
                 </a>
               </div>
             </motion.div>
@@ -183,17 +205,15 @@ export function Navbar() {
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-espresso text-ivory py-3 px-4 shadow-2xl border-t border-gold/30 flex items-center justify-between">
         <div className="flex flex-col">
           <span className="text-xs font-serif tracking-wider text-champagne">BRIGHT & BEAUTY</span>
-          <span className="text-[10px] text-ivory/70 font-sans">Certified MUA • Udaipur</span>
+          <span className="text-[10px] text-ivory/70 font-sans">{BRAND_DATA.phoneNumberDisplay}</span>
         </div>
-        <a
-          href={BRAND_DATA.whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => onOpenBooking()}
           className="bg-gold hover:bg-gold-bright text-white px-4 py-2 text-xs font-medium uppercase tracking-widest flex items-center gap-2 rounded-sm shadow-md active:scale-95 transition-all"
         >
-          <MessageCircle className="w-3.5 h-3.5 fill-white" />
-          <span>Book on WhatsApp</span>
-        </a>
+          <Calendar className="w-3.5 h-3.5" />
+          <span>Book Date</span>
+        </button>
       </div>
     </>
   );

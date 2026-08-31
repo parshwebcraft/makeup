@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustStrip } from "@/components/TrustStrip";
@@ -12,24 +15,48 @@ import { DestinationWeddings } from "@/components/DestinationWeddings";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { Footer } from "@/components/Footer";
+import { BookingModal } from "@/components/BookingModal";
 
 export default function Home() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+
+  const handleOpenBooking = (serviceName?: string) => {
+    if (serviceName) {
+      setSelectedService(serviceName);
+    } else {
+      setSelectedService("");
+    }
+    setIsBookingOpen(true);
+  };
+
+  const handleCloseBooking = () => {
+    setIsBookingOpen(false);
+  };
+
   return (
     <main className="min-h-screen bg-ivory text-espresso selection:bg-blush selection:text-espresso">
-      <Navbar />
-      <Hero />
+      <Navbar onOpenBooking={handleOpenBooking} />
+      <Hero onOpenBooking={handleOpenBooking} />
       <TrustStrip />
       <AboutSection />
-      <ServicesSection />
+      <ServicesSection onOpenBooking={handleOpenBooking} />
       <PortfolioGallery />
-      <BridalExperience />
+      <BridalExperience onOpenBooking={handleOpenBooking} />
       <WhyUsSection />
       <TestimonialsSection />
       <InstagramSection />
-      <DestinationWeddings />
+      <DestinationWeddings onOpenBooking={handleOpenBooking} />
       <FAQAccordion />
-      <FinalCTASection />
-      <Footer />
+      <FinalCTASection onOpenBooking={handleOpenBooking} />
+      <Footer onOpenBooking={handleOpenBooking} />
+
+      {/* Luxury Booking Enquiry Modal */}
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={handleCloseBooking}
+        initialService={selectedService}
+      />
     </main>
   );
 }

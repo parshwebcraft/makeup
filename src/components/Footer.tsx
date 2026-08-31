@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, MessageCircle, Heart } from "lucide-react";
+import { Instagram, MessageCircle, Phone } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
 
-export function Footer() {
+interface FooterProps {
+  onOpenBooking: (serviceName?: string) => void;
+}
+
+export function Footer({ onOpenBooking }: FooterProps) {
   const footerLinks = [
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
@@ -34,6 +38,10 @@ export function Footer() {
             </div>
 
             <div className="mt-6 text-xs text-champagne/80 font-light space-y-1">
+              <p className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-gold" />
+                <span>Contact: <strong>{BRAND_DATA.phoneNumberDisplay}</strong></span>
+              </p>
               <p>Certified MUA by Samaira Sandhu</p>
               <p>Location: Udaipur, Rajasthan, India</p>
             </div>
@@ -44,7 +52,7 @@ export function Footer() {
             <p className="text-xs uppercase tracking-[0.2em] font-medium text-gold mb-4">
               Quick Navigation
             </p>
-            <ul className="grid grid-cols-2 gap-3">
+            <ul className="grid grid-cols-2 gap-3 mb-6">
               {footerLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -56,6 +64,13 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+
+            <button
+              onClick={() => onOpenBooking()}
+              className="px-5 py-2.5 bg-gold text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-gold-bright transition-colors"
+            >
+              Book Appointment
+            </button>
           </div>
 
           {/* Socials & Connect */}
@@ -91,7 +106,7 @@ export function Footer() {
 
         {/* Bottom Credits & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ivory/50 font-light gap-4">
-          <p>© {new Date().getFullYear()} Bright & Beauty. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Bright & Beauty by Jiya Vadhwani. All rights reserved.</p>
           <p className="flex items-center gap-1">
             <span>Designed & Developed by</span>
             <span className="text-champagne font-medium hover:text-gold transition-colors">ParshWebCraft</span>

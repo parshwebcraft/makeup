@@ -49,8 +49,9 @@ export const BRAND_DATA = {
   location: "Udaipur, Rajasthan",
   instagramHandle: "@_bright_and_beauty_",
   instagramUrl: "https://www.instagram.com/_bright_and_beauty_/",
-  whatsappNumber: "919521347419",
-  whatsappUrl: "https://wa.me/919521347419?text=Hi%20Jiya%2C%20I%20found%20Bright%20%26%20Beauty%20online%20and%20would%20like%20to%20enquire%20about%20makeup%20services.",
+  whatsappNumber: "918005649056",
+  phoneNumberDisplay: "+91 80056 49056",
+  whatsappUrl: "https://wa.me/918005649056?text=Hi%20Jiya%2C%20I%20found%20Bright%20%26%20Beauty%20online%20and%20would%20like%20to%20enquire%20about%20makeup%20services.",
   followersCount: "10K+",
   postsCount: "400+",
 };
@@ -62,7 +63,7 @@ export const HERO_DATA = {
   subtitle: "for Your Most Beautiful Moments",
   servicesOverview: "Bridal • Party • HD Makeup • Destination Weddings",
   location: "Udaipur, Rajasthan",
-  ctaPrimary: "Check Availability",
+  ctaPrimary: "Book Your Appointment",
   ctaSecondary: "View Portfolio",
   heroImage: "/images/portfolio/img21.jpg",
 };
@@ -349,7 +350,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq-5",
     question: "How can I check availability for my event dates?",
-    answer: "You can click on 'Check Availability' or 'Book via WhatsApp' on our website. Send us your wedding dates, event location, and required services, and Jiya will personally respond with availability.",
+    answer: "You can click on 'Book Appointment' or 'Book via WhatsApp' on our website to fill in your event details. Send us your date, location, and required services, and Jiya will personally respond with availability.",
   },
   {
     id: "faq-6",

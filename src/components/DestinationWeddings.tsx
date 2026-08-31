@@ -2,17 +2,20 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Plane, Sparkles } from "lucide-react";
-import { BRAND_DATA } from "@/data/content";
+import { Plane, Calendar } from "lucide-react";
 
-export function DestinationWeddings() {
+interface DestinationWeddingsProps {
+  onOpenBooking: (serviceName?: string) => void;
+}
+
+export function DestinationWeddings({ onOpenBooking }: DestinationWeddingsProps) {
   return (
     <section className="relative py-32 bg-espresso text-ivory overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1600&auto=format&fit=crop"
-          alt="Destination Bridal Makeup by Bright & Beauty"
+          src="/images/portfolio/img16.jpg"
+          alt="Destination Bridal Makeup by Bright & Beauty Jiya Vadhwani"
           fill
           sizes="100vw"
           className="object-cover object-center opacity-30 mix-blend-luminosity filter contrast-125"
@@ -42,15 +45,13 @@ export function DestinationWeddings() {
             Planning a destination wedding? Bring your bridal beauty vision wherever your celebration takes you. Complete entourage makeup and multi-function styling anywhere in India or abroad.
           </p>
 
-          <a
-            href={`https://wa.me/${BRAND_DATA.whatsappNumber}?text=Hi%20Jiya%2C%20I%20am%20planning%20a%20destination%20wedding%20and%20would%20like%20to%20enquire%20about%20travel%20dates.`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => onOpenBooking("Destination Wedding Travel")}
             className="inline-flex items-center gap-3 px-8 py-4 bg-gold hover:bg-gold-bright text-white text-xs uppercase tracking-[0.25em] font-medium transition-all shadow-gold-glow"
           >
-            <Sparkles className="w-4 h-4" />
+            <Calendar className="w-4 h-4" />
             <span>Enquire for Destination Wedding</span>
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

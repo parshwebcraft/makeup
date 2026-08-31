@@ -3,10 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { MapPin, Award, ChevronDown, Sparkles } from "lucide-react";
-import { BRAND_DATA, HERO_DATA } from "@/data/content";
+import { MapPin, Award, ChevronDown, Sparkles, Calendar } from "lucide-react";
+import { HERO_DATA } from "@/data/content";
 
-export function Hero() {
+interface HeroProps {
+  onOpenBooking: (serviceName?: string) => void;
+}
+
+export function Hero({ onOpenBooking }: HeroProps) {
   return (
     <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-espresso text-ivory pt-20 pb-16">
       {/* Background Image with Dark & Warm Vignette Overlay */}
@@ -94,15 +98,13 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.9 }}
           className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
-          <a
-            href={BRAND_DATA.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => onOpenBooking()}
             className="w-full sm:w-auto px-8 py-4 bg-gold hover:bg-gold-bright text-white text-xs uppercase tracking-[0.25em] font-medium transition-all duration-300 shadow-gold-glow flex items-center justify-center gap-2 group"
           >
-            <Sparkles className="w-4 h-4 text-white group-hover:rotate-12 transition-transform" />
+            <Calendar className="w-4 h-4 text-white group-hover:rotate-12 transition-transform" />
             <span>{HERO_DATA.ctaPrimary}</span>
-          </a>
+          </button>
 
           <Link
             href="#portfolio"

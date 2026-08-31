@@ -1,10 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, Instagram, Sparkles } from "lucide-react";
+import { MessageCircle, Instagram, Sparkles, Calendar, Phone } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
 
-export function FinalCTASection() {
+interface FinalCTASectionProps {
+  onOpenBooking: (serviceName?: string) => void;
+}
+
+export function FinalCTASection({ onOpenBooking }: FinalCTASectionProps) {
   return (
     <section id="contact" className="py-24 bg-espresso text-ivory relative overflow-hidden border-t border-gold/20">
       {/* Decorative Golden Ambient Glow */}
@@ -30,20 +34,33 @@ export function FinalCTASection() {
 
           <div className="h-[1px] w-24 bg-gold mx-auto my-6" />
 
-          <p className="text-base sm:text-lg text-ivory/80 font-light max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg text-ivory/80 font-light max-w-xl mx-auto mb-8 leading-relaxed">
             Have a wedding, celebration or special occasion coming up? Let&apos;s talk about the look you&apos;ve been dreaming of.
           </p>
 
+          <div className="inline-flex items-center gap-3 text-sm text-gold font-light mb-10 px-4 py-2 border border-gold/30 bg-espresso-light">
+            <Phone className="w-4 h-4 text-gold" />
+            <span>Direct Call / WhatsApp: <strong>{BRAND_DATA.phoneNumberDisplay}</strong></span>
+          </div>
+
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <button
+              onClick={() => onOpenBooking()}
+              className="w-full sm:w-auto px-8 py-4 bg-gold hover:bg-gold-bright text-white text-xs uppercase tracking-[0.25em] font-medium transition-all shadow-gold-glow flex items-center justify-center gap-3"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Book Appointment</span>
+            </button>
+
             <a
               href={BRAND_DATA.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 bg-gold hover:bg-gold-bright text-white text-xs uppercase tracking-[0.25em] font-medium transition-all shadow-gold-glow flex items-center justify-center gap-3"
+              className="w-full sm:w-auto px-8 py-4 border border-champagne/40 hover:border-gold hover:text-gold text-ivory text-xs uppercase tracking-[0.25em] font-medium transition-all flex items-center justify-center gap-3"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
-              <span>Book via WhatsApp</span>
+              <span>WhatsApp Direct</span>
             </a>
 
             <a

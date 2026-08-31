@@ -3,9 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Check } from "lucide-react";
-import { SERVICES, BRAND_DATA } from "@/data/content";
+import { SERVICES } from "@/data/content";
 
-export function ServicesSection() {
+interface ServicesSectionProps {
+  onOpenBooking: (serviceName?: string) => void;
+}
+
+export function ServicesSection({ onOpenBooking }: ServicesSectionProps) {
   return (
     <section id="services" className="py-24 bg-ivory-cream relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,15 +81,13 @@ export function ServicesSection() {
 
               {/* Bottom Action Button */}
               <div className="px-6 pb-6 pt-0">
-                <a
-                  href={`https://wa.me/${BRAND_DATA.whatsappNumber}?text=Hi%20Jiya%2C%20I%20would%20like%20to%20enquire%20about%20your%20${encodeURIComponent(service.title)}%20services.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => onOpenBooking(service.title)}
                   className="w-full py-3 border border-espresso/20 group-hover:border-gold group-hover:bg-gold group-hover:text-white text-espresso text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <span>Enquire Now</span>
+                  <span>Book This Service</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}
