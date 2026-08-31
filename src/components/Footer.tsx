@@ -107,9 +107,25 @@ export function Footer({ onOpenBooking }: FooterProps) {
         {/* Bottom Credits & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ivory/50 font-light gap-4">
           <p>© {new Date().getFullYear()} Bright & Beauty by Jiya Vadhwani. All rights reserved.</p>
-          <p className="flex items-center gap-1">
+          <p className="flex items-center gap-1 flex-wrap">
             <span>Designed & Developed by</span>
-            <span className="text-champagne font-medium hover:text-gold transition-colors">ParshWebCraft</span>
+            <a
+              href="https://www.instagram.com/_gauranshjaroli_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-champagne font-medium hover:text-gold transition-colors underline decoration-gold/40 underline-offset-2"
+            >
+              Gauransh Jaroli
+            </a>
+            <span className="text-champagne/40">|</span>
+            <a
+              href="https://www.parshwebcraft.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-champagne font-medium hover:text-gold transition-colors underline decoration-gold/40 underline-offset-2"
+            >
+              ParshWebCraft
+            </a>
           </p>
         </div>
       </div>

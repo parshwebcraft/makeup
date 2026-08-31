@@ -80,16 +80,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
           </nav>
 
           {/* Right side CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href={`tel:${BRAND_DATA.phoneNumberDisplay.replace(/\s+/g, '')}`}
-              className={`text-xs font-light tracking-wider hover:text-gold transition-colors ${
-                isScrolled ? "text-espresso/70" : "text-white/80"
-              }`}
-            >
-              {BRAND_DATA.phoneNumberDisplay}
-            </a>
-
+          <div className="hidden md:flex items-center">
             <button
               onClick={() => onOpenBooking()}
               className={`px-5 py-2.5 text-xs uppercase tracking-[0.2em] font-medium border transition-all duration-300 rounded-none flex items-center gap-2 ${
@@ -167,10 +158,10 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
 
                 <div className="mt-8 space-y-1">
                   <p className="text-xs text-espresso/60 uppercase tracking-widest">
-                    Direct Contact
+                    Location
                   </p>
-                  <p className="text-sm font-serif text-espresso">{BRAND_DATA.phoneNumberDisplay}</p>
-                  <p className="text-xs text-gold font-light">{BRAND_DATA.location}</p>
+                  <p className="text-sm font-serif text-espresso">{BRAND_DATA.location}</p>
+                  <p className="text-xs text-gold font-light">{BRAND_DATA.certification}</p>
                 </div>
               </div>
 
@@ -205,7 +196,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-espresso text-ivory py-3 px-4 shadow-2xl border-t border-gold/30 flex items-center justify-between">
         <div className="flex flex-col">
           <span className="text-xs font-serif tracking-wider text-champagne">BRIGHT & BEAUTY</span>
-          <span className="text-[10px] text-ivory/70 font-sans">{BRAND_DATA.phoneNumberDisplay}</span>
+          <span className="text-[10px] text-ivory/70 font-sans">Certified MUA • Udaipur</span>
         </div>
         <button
           onClick={() => onOpenBooking()}
