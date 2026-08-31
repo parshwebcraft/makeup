@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { SEO_CONFIG } from "@/config/seo";
 
 const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
@@ -16,34 +17,74 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#1C1614",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
-  title: "Bright & Beauty | Jiya Vadhwani | Makeup Artist in Udaipur",
-  description:
-    "Bright & Beauty by Jiya Vadhwani, a professional and certified makeup artist in Udaipur offering bridal, party, HD and destination wedding makeup.",
+  title: SEO_CONFIG.defaultTitle,
+  description: SEO_CONFIG.defaultDescription,
   keywords: [
-    "Makeup Artist in Udaipur",
-    "Bridal Makeup Artist Udaipur",
-    "Bridal Makeup Udaipur",
-    "HD Makeup Udaipur",
-    "Party Makeup Udaipur",
-    "Destination Wedding Makeup",
-    "Udaipur Makeup Artist",
+    "makeup artist in Udaipur",
+    "bridal makeup artist in Udaipur",
+    "bridal makeup Udaipur",
+    "makeup artist Udaipur",
+    "best makeup artist in Udaipur",
+    "professional makeup artist Udaipur",
+    "HD makeup artist Udaipur",
+    "HD makeup Udaipur",
+    "party makeup artist Udaipur",
+    "party makeup Udaipur",
+    "destination wedding makeup artist",
+    "destination wedding makeup Udaipur",
+    "bridal makeup artist Rajasthan",
+    "Jiya Vadhwani makeup artist",
     "Certified MUA Samaira Sandhu",
-    "Bright and Beauty Jiya Vadhwani",
+    "Bright & Beauty Udaipur",
   ],
-  authors: [{ name: "Jiya Vadhwani" }],
-  creator: "Bright & Beauty",
+  authors: [{ name: SEO_CONFIG.artistName }],
+  creator: SEO_CONFIG.brandName,
+  publisher: SEO_CONFIG.brandName,
+  metadataBase: new URL(SEO_CONFIG.domain),
+  alternates: {
+    canonical: SEO_CONFIG.domain,
+  },
   openGraph: {
-    title: "Bright & Beauty | Luxury Bridal Makeup Artist in Udaipur",
-    description: "Refined makeup artistry by Jiya Vadhwani for timeless Indian brides and destination weddings in Udaipur, Rajasthan.",
-    url: "https://brightandbeauty.in",
-    siteName: "Bright & Beauty",
+    title: SEO_CONFIG.defaultTitle,
+    description: SEO_CONFIG.defaultDescription,
+    url: SEO_CONFIG.domain,
+    siteName: SEO_CONFIG.siteName,
+    images: [
+      {
+        url: `${SEO_CONFIG.domain}/images/portfolio/img21.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Bright & Beauty by Jiya Vadhwani - Bridal Makeup Artist in Udaipur",
+      },
+    ],
     locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO_CONFIG.defaultTitle,
+    description: SEO_CONFIG.defaultDescription,
+    images: [`${SEO_CONFIG.domain}/images/portfolio/img21.jpg`],
+    creator: "@_bright_and_beauty_",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

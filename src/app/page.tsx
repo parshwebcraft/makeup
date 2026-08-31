@@ -17,6 +17,7 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { Footer } from "@/components/Footer";
 import { BookingModal } from "@/components/BookingModal";
+import { JsonLd } from "@/components/JsonLd";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -37,6 +38,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-ivory text-espresso selection:bg-blush selection:text-espresso">
+      <JsonLd
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+        ]}
+      />
+
       <Navbar onOpenBooking={handleOpenBooking} />
       <Hero onOpenBooking={handleOpenBooking} />
       <TrustStrip />
