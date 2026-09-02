@@ -75,7 +75,7 @@ export const HERO_DATA = {
   location: "Titardi, Udaipur, Rajasthan",
   ctaPrimary: "Book Your Appointment",
   ctaSecondary: "View Portfolio",
-  heroImage: "/images/instagram/ig1.jpg",
+  heroImage: "/images/instagram/ig2.jpg",
 };
 
 export const TRUST_STATS = [
