@@ -28,18 +28,18 @@ export function AboutSection() {
               <div className="relative aspect-[3/4] w-full overflow-hidden shadow-luxury border border-champagne/40">
                 <Image
                   src={ABOUT_DATA.image}
-                  alt="Jiya Vadhwani - Makeup Artist in Udaipur"
+                  alt="Jiya Vadhwani - Lead Makeup Artist in Udaipur"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
 
-              {/* Offset Studio Accent Photo */}
+              {/* Offset Secondary Artist Photo */}
               <div className="absolute -bottom-8 -right-6 w-1/2 aspect-square overflow-hidden border-4 border-ivory shadow-luxury-lg hidden sm:block">
                 <Image
                   src={ABOUT_DATA.studioImage}
-                  alt="Bright & Beauty Studio Artistry"
+                  alt="Jiya Vadhwani - Makeup Artistry & Styling"
                   fill
                   sizes="25vw"
                   className="object-cover"
@@ -119,6 +119,42 @@ export function AboutSection() {
           </motion.div>
 
         </div>
+
+        {/* 4 Artist Photos Grid */}
+        {ABOUT_DATA.artistImages && (
+          <div className="mt-20 pt-12 border-t border-champagne/30">
+            <div className="text-center mb-8">
+              <span className="text-xs uppercase tracking-[0.25em] text-gold font-medium block mb-1">
+                Artist Spotlight
+              </span>
+              <h3 className="font-serif text-2xl text-espresso font-light">
+                Jiya Vadhwani in Action
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {ABOUT_DATA.artistImages.map((imgSrc, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-[3/4] border border-champagne/40 overflow-hidden shadow-md group"
+                >
+                  <Image
+                    src={imgSrc}
+                    alt={`Jiya Vadhwani Makeup Artist Udaipur - Photo ${i + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                    <span className="text-[11px] text-ivory font-serif tracking-wider">
+                      Jiya Vadhwani • Photo 0{i + 1}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

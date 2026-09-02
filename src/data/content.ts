@@ -96,8 +96,14 @@ export const ABOUT_DATA = {
     "Complete Saree / Lehenga Draping included",
     "Strict hygiene protocols & customized skin preparation",
   ],
-  image: "/images/portfolio/img26.jpg",
-  studioImage: "/images/portfolio/img1.jpg",
+  image: "/images/about/jiya1.jpeg",
+  studioImage: "/images/about/jiya2.jpeg",
+  artistImages: [
+    "/images/about/jiya1.jpeg",
+    "/images/about/jiya2.jpeg",
+    "/images/about/jiya3.jpeg",
+    "/images/about/jiya4.jpeg",
+  ],
   signature: "Jiya Vadhwani",
 };
 

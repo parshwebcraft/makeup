@@ -10,7 +10,7 @@ export const metadata = generateMetadataObj({
   description:
     "Learn about Jiya Vadhwani, certified professional makeup artist in Udaipur trained by Samaira Sandhu. Specializing in luxury bridal, HD, party & destination wedding makeup.",
   path: "/about",
-  image: "/images/portfolio/img26.jpg",
+  image: "/images/about/jiya1.jpeg",
 });
 
 export default function AboutPage() {
@@ -108,6 +108,28 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+
+          {/* 4 Artist Photos Gallery */}
+          {ABOUT_DATA.artistImages && (
+            <div className="mb-16">
+              <h3 className="font-serif text-2xl text-espresso font-light mb-6 text-center">
+                Jiya Vadhwani & Studio Gallery
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {ABOUT_DATA.artistImages.map((imgSrc, i) => (
+                  <div key={i} className="relative aspect-[3/4] border border-champagne/40 overflow-hidden shadow-md">
+                    <Image
+                      src={imgSrc}
+                      alt={`Jiya Vadhwani Artist Photo ${i + 1}`}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="bg-espresso text-ivory p-8 text-center border border-gold/30">
             <h3 className="font-serif text-2xl sm:text-3xl text-ivory font-light mb-3">
