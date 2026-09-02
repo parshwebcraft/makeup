@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Instagram, Heart, MessageCircle } from "lucide-react";
+import { Instagram, ExternalLink } from "lucide-react";
 import { INSTAGRAM_POSTS, BRAND_DATA } from "@/data/content";
 
 export function InstagramSection() {
@@ -27,7 +27,7 @@ export function InstagramSection() {
           </p>
         </div>
 
-        {/* 6-Image Instagram Feed Grid */}
+        {/* 6-Image Instagram Feed Grid - Clean & Uncropped */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
           {INSTAGRAM_POSTS.map((post, idx) => (
             <motion.a
@@ -39,26 +39,23 @@ export function InstagramSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="group relative aspect-[3/4] overflow-hidden bg-espresso shadow-md border border-champagne/30"
+              className="group relative aspect-[4/5] overflow-hidden bg-espresso shadow-md border border-champagne/30 hover:border-gold transition-colors"
             >
               <Image
                 src={post.image}
-                alt={post.caption}
+                alt={`Bright & Beauty Instagram post ${idx + 1}`}
                 fill
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                className="object-cover object-top sm:object-[center_20%] transition-transform duration-500 group-hover:scale-105"
+                className="object-cover object-top sm:object-center transition-transform duration-500 group-hover:scale-105"
               />
 
-              {/* Hover Dark Overlay with Likes & Comments */}
-              <div className="absolute inset-0 bg-espresso/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 text-white p-2 text-center">
-                <div className="flex items-center gap-1">
-                  <Heart className="w-4 h-4 fill-white" />
-                  <span className="text-xs font-sans">{post.likes}</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <MessageCircle className="w-4 h-4 fill-white" />
-                  <span className="text-xs font-sans">{post.comments}</span>
-                </div>
+              {/* Clean Luxury Hover Overlay (No Fake Likes/Comments) */}
+              <div className="absolute inset-0 bg-espresso/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                <Instagram className="w-6 h-6 text-gold mb-2 transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300" />
+                <span className="text-[11px] uppercase tracking-widest text-ivory font-medium flex items-center gap-1">
+                  <span>View Post</span>
+                  <ExternalLink className="w-3 h-3 text-gold" />
+                </span>
               </div>
             </motion.a>
           ))}
