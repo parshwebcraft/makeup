@@ -69,65 +69,58 @@ export function PortfolioGallery() {
           ))}
         </div>
 
-        {/* Asymmetric Masonry-style Portfolio Grid */}
+        {/* Uniform Clean Portfolio Grid */}
         <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           <AnimatePresence>
-            {filteredItems.map((item, index) => {
-              // Create subtle asymmetric height variance for an editorial masonry feel
-              const isTall = index % 5 === 0 || index % 5 === 3;
-              
-              return (
-                <motion.div
-                  key={item.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
-                  className={`group relative overflow-hidden bg-espresso cursor-pointer border border-champagne/30 shadow-luxury ${
-                    isTall ? "lg:row-span-2 aspect-[3/4]" : "aspect-[4/5]"
-                  }`}
-                  onClick={() => setSelectedItemIndex(index)}
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-108"
-                  />
+            {filteredItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
+                className="group relative overflow-hidden bg-espresso cursor-pointer border border-champagne/30 shadow-luxury aspect-[3/4]"
+                onClick={() => setSelectedItemIndex(index)}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-108"
+                />
 
-                  {/* Dark Vignette Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/30 to-transparent opacity-40 group-hover:opacity-90 transition-opacity duration-500 flex flex-col justify-end p-6" />
+                {/* Dark Vignette Overlay on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/30 to-transparent opacity-40 group-hover:opacity-90 transition-opacity duration-500 flex flex-col justify-end p-6" />
 
-                  {/* Overlay Content */}
-                  <div className="absolute inset-0 p-6 flex flex-col justify-between z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="flex justify-between items-start">
-                      <span className="px-3 py-1 bg-gold text-white text-[10px] uppercase tracking-[0.2em] font-medium">
-                        {item.category}
-                      </span>
-                    </div>
+                {/* Overlay Content */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-between z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="flex justify-between items-start">
+                    <span className="px-3 py-1 bg-gold text-white text-[10px] uppercase tracking-[0.2em] font-medium">
+                      {item.category}
+                    </span>
+                  </div>
 
-                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <h3 className="font-serif text-2xl text-ivory font-normal mb-1">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs text-champagne/80 font-light mb-4">
-                        {item.subtitle}
-                      </p>
-                      
-                      <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gold font-medium">
-                        <Eye className="w-3.5 h-3.5" />
-                        <span>View Look</span>
-                      </div>
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="font-serif text-2xl text-ivory font-normal mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-champagne/80 font-light mb-4">
+                      {item.subtitle}
+                    </p>
+                    
+                    <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gold font-medium">
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>View Look</span>
                     </div>
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+              </motion.div>
+            ))}
           </AnimatePresence>
         </motion.div>
       </div>
