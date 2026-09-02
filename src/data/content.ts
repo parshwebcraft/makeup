@@ -113,7 +113,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Bridal Makeup Packages",
     tagline: "Timeless Bridal Perfection",
     description: "Tailored bridal packages designed around your features, outfit, and wedding aesthetic for long-lasting comfort and royal elegance.",
-    image: "/images/portfolio/img21.jpg",
+    image: "/images/portfolio/img26.jpg",
     features: [
       "High-End & Premium International Products",
       "Advanced Hair Styling & Hair Extensions",
@@ -151,7 +151,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Family & Guest Makeup",
     tagline: "Glamour for Family & Siders",
     description: "Elegant makeup for mothers, sisters, siders, and guests attending engagements, receptions, and celebrations.",
-    image: "/images/portfolio/img1.jpg",
+    image: "/images/portfolio/img18.jpg",
     features: [
       "Basic & Premium Makeup options",
       "Professional Hair Styling",
@@ -191,7 +191,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Pre-Wedding Shoot Makeup",
     tagline: "Camera-Ready Outdoor Glam",
     description: "Flawless photography makeup crafted for outdoor light, location changes, and long-lasting pre-wedding shoots.",
-    image: "/images/portfolio/img30.jpg",
+    image: "/images/portfolio/img32.jpg",
     features: [
       "Full Day & Multi-Day Shoot Coverage",
       "Touch-up Support & Hair Styling",
@@ -217,7 +217,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Destination & Model Shoots",
     tagline: "Global Travel & Editorial Services",
     description: "Luxury makeup services for brides celebrating their wedding beyond Udaipur, plus high-fashion model shoot makeup.",
-    image: "/images/portfolio/img16.jpg",
+    image: "/images/portfolio/img28.jpg",
     features: [
       "On-Location Setup Anywhere in India & Abroad",
       "Multi-Event Look Continuity",
