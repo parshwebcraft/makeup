@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Instagram, Heart, MessageCircle, Sparkles } from "lucide-react";
+import { Instagram, Heart, MessageCircle } from "lucide-react";
 import { INSTAGRAM_POSTS, BRAND_DATA } from "@/data/content";
 
 export function InstagramSection() {
@@ -32,21 +32,21 @@ export function InstagramSection() {
           {INSTAGRAM_POSTS.map((post, idx) => (
             <motion.a
               key={post.id}
-              href={BRAND_DATA.instagramUrl}
+              href={post.url}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="group relative aspect-square overflow-hidden bg-espresso shadow-md"
+              className="group relative aspect-[3/4] overflow-hidden bg-espresso shadow-md border border-champagne/30"
             >
               <Image
                 src={post.image}
                 alt={post.caption}
                 fill
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover object-top sm:object-[center_20%] transition-transform duration-500 group-hover:scale-105"
               />
 
               {/* Hover Dark Overlay with Likes & Comments */}

@@ -13,7 +13,7 @@ interface HeroProps {
 export function Hero({ onOpenBooking }: HeroProps) {
   return (
     <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-espresso text-ivory pt-20 pb-16">
-      {/* Background Image with Dark & Warm Vignette Overlay */}
+      {/* Background Image with Warm & Smooth Vignette Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
           src={HERO_DATA.heroImage}
@@ -21,9 +21,9 @@ export function Hero({ onOpenBooking }: HeroProps) {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center scale-105 opacity-40 mix-blend-luminosity filter contrast-[1.08] saturate-[1.1]"
+          className="object-cover object-top sm:object-center opacity-45 scale-102 transition-transform duration-1000"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-espresso/90 via-espresso/70 to-espresso/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/90 via-espresso/70 to-espresso/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-espresso/60" />
       </div>
 
@@ -100,17 +100,17 @@ export function Hero({ onOpenBooking }: HeroProps) {
         >
           <button
             onClick={() => onOpenBooking()}
-            className="w-full sm:w-auto px-8 py-4 bg-gold hover:bg-gold-bright text-white text-xs uppercase tracking-[0.25em] font-medium transition-all duration-300 shadow-gold-glow flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto px-8 py-4 bg-gold hover:bg-gold-bright text-white text-xs uppercase tracking-[0.25em] font-medium transition-all duration-300 shadow-gold-glow flex items-center justify-center gap-2 rounded-none"
           >
-            <Calendar className="w-4 h-4 text-white group-hover:rotate-12 transition-transform" />
+            <Calendar className="w-4 h-4" />
             <span>{HERO_DATA.ctaPrimary}</span>
           </button>
 
           <Link
             href="#portfolio"
-            className="w-full sm:w-auto px-8 py-4 border border-ivory/40 hover:border-gold hover:text-gold text-ivory text-xs uppercase tracking-[0.25em] font-medium transition-all duration-300 flex items-center justify-center"
+            className="w-full sm:w-auto px-8 py-4 border border-champagne/40 hover:border-gold hover:bg-ivory/10 text-ivory text-xs uppercase tracking-[0.25em] font-light transition-all duration-300 text-center"
           >
-            <span>{HERO_DATA.ctaSecondary}</span>
+            {HERO_DATA.ctaSecondary}
           </Link>
         </motion.div>
       </div>
@@ -119,13 +119,13 @@ export function Hero({ onOpenBooking }: HeroProps) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+        transition={{ duration: 1, delay: 1.2 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-champagne/60 text-[10px] tracking-widest uppercase"
       >
-        <span className="text-[10px] tracking-[0.3em] uppercase text-champagne/70 font-light">Scroll</span>
+        <span>Scroll</span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
         >
           <ChevronDown className="w-4 h-4 text-gold" />
         </motion.div>

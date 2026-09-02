@@ -43,17 +43,17 @@ export function ServicesSection({ onOpenBooking }: ServicesSectionProps) {
               className="group bg-ivory border border-champagne/40 hover:border-gold/60 shadow-luxury transition-all duration-500 flex flex-col justify-between overflow-hidden"
             >
               <div>
-                {/* Image Header with Subtle Hover Zoom */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                {/* Image Header with Generative Aspect Ratio & Top Object Fit */}
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-espresso">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-108"
+                    className="object-cover object-top sm:object-[center_20%] transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                  <span className="absolute bottom-3 left-4 text-xs tracking-widest text-champagne uppercase font-light">
+                  <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+                  <span className="absolute bottom-3 left-4 text-xs tracking-widest text-champagne uppercase font-light drop-shadow-md">
                     {service.tagline}
                   </span>
                 </div>
