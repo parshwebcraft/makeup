@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
 
@@ -36,12 +37,26 @@ export function Footer({ onOpenBooking }: FooterProps) {
           {/* Brand Col */}
           <div className="md:col-span-4 flex flex-col justify-between">
             <div>
-              <span className="font-serif text-3xl tracking-widest text-ivory block uppercase">
-                Bright & Beauty
-              </span>
-              <span className="text-xs text-gold font-sans tracking-[0.25em] block -mt-1 uppercase">
-                By Jiya Vadhwani
-              </span>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="relative w-12 h-12 overflow-hidden rounded-full border border-gold/40 shrink-0 bg-espresso/40 p-0.5 shadow-md">
+                  <Image
+                    src="/bblogo.png"
+                    alt="Bright & Beauty by Jiya Vadhwani Logo"
+                    fill
+                    sizes="48px"
+                    className="object-contain p-0.5"
+                  />
+                </div>
+                <div>
+                  <span className="font-serif text-2xl tracking-widest text-ivory block uppercase">
+                    Bright & Beauty
+                  </span>
+                  <span className="text-[10px] text-gold font-sans tracking-[0.25em] block -mt-1 uppercase">
+                    By Jiya Vadhwani
+                  </span>
+                </div>
+              </div>
+
               <p className="text-xs text-ivory/70 font-light mt-4 max-w-sm leading-relaxed">
                 Certified luxury bridal makeup artist bringing timeless elegance, camera-ready perfection, and royal Indian beauty to Udaipur and global destination weddings.
               </p>

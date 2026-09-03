@@ -8,6 +8,7 @@ export const SEO_CONFIG = {
     "Bright & Beauty by Jiya Vadhwani is a certified luxury bridal makeup artist in Udaipur, Rajasthan. Offering bridal, HD, party, pre-wedding & destination wedding makeup services.",
   artistName: "Jiya Vadhwani",
   brandName: "Bright & Beauty",
+  logo: "/bblogo.png",
   city: "Udaipur",
   state: "Rajasthan",
   country: "India",
@@ -68,7 +69,7 @@ export function generateMetadataObj({
   title,
   description,
   path = "",
-  image = "/images/portfolio/img21.jpg",
+  image = "/bblogo.png",
 }: {
   title: string;
   description: string;
@@ -77,6 +78,7 @@ export function generateMetadataObj({
 }) {
   const url = `${SEO_CONFIG.domain}${path}`;
   const fullImage = image.startsWith("http") ? image : `${SEO_CONFIG.domain}${image}`;
+  const logoImage = `${SEO_CONFIG.domain}${SEO_CONFIG.logo}`;
 
   return {
     title,
@@ -106,7 +108,13 @@ export function generateMetadataObj({
           url: fullImage,
           width: 1200,
           height: 630,
-          alt: `${title} - Jiya Vadhwani Bright & Beauty`,
+          alt: `${title} - Bright & Beauty by Jiya Vadhwani`,
+        },
+        {
+          url: logoImage,
+          width: 512,
+          height: 512,
+          alt: "Bright & Beauty Logo",
         },
       ],
       locale: "en_IN",
@@ -116,7 +124,7 @@ export function generateMetadataObj({
       card: "summary_large_image",
       title,
       description,
-      images: [fullImage],
+      images: [fullImage, logoImage],
       creator: "@_bright_and_beauty_",
     },
     robots: {

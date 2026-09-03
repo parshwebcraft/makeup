@@ -56,6 +56,7 @@ export const BRAND_DATA = {
   certification: "Certified MUA by Samaira Sandhu",
   location: "Titardi, Udaipur, Rajasthan",
   email: "Booking@jiyavadhwani.com",
+  logo: "/bblogo.png",
   instagramHandle: "@_bright_and_beauty_",
   instagramUrl: "https://www.instagram.com/_bright_and_beauty_/",
   whatsappNumber: "918005649056",

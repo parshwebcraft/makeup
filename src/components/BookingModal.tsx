@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, MessageCircle } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
@@ -120,11 +121,24 @@ Please confirm your availability for my date!`;
 
           {/* Modal Header */}
           <div className="mb-6">
-            <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="w-4 h-4 text-gold" />
-              <span className="text-[11px] uppercase tracking-[0.25em] text-gold font-medium">
-                Bright & Beauty Booking
-              </span>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="relative w-8 h-8 rounded-full border border-gold/40 overflow-hidden shrink-0 bg-espresso/40">
+                <Image
+                  src="/bblogo.png"
+                  alt="Bright & Beauty Logo"
+                  fill
+                  sizes="32px"
+                  className="object-contain p-0.5"
+                />
+              </div>
+              <div>
+                <span className="text-[11px] uppercase tracking-[0.25em] text-gold font-medium block">
+                  Bright & Beauty Booking
+                </span>
+                <span className="text-[10px] text-ivory/60 uppercase font-sans tracking-widest block">
+                  Udaipur, Rajasthan
+                </span>
+              </div>
             </div>
             <h3 className="font-serif text-2xl sm:text-3xl text-gold font-normal">
               Book an Appointment

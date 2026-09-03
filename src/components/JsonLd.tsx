@@ -19,8 +19,8 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
     name: SEO_CONFIG.siteName,
     alternateName: "Bright & Beauty Makeup Studio",
     url: SEO_CONFIG.domain,
-    logo: `${SEO_CONFIG.domain}/images/portfolio/img21.jpg`,
-    image: `${SEO_CONFIG.domain}/images/portfolio/img21.jpg`,
+    logo: `${SEO_CONFIG.domain}/bblogo.png`,
+    image: `${SEO_CONFIG.domain}/bblogo.png`,
     description: GEO_ENTITY_STATEMENT,
     telephone: SEO_CONFIG.whatsappPrimary,
     email: "Booking@jiyavadhwani.com",
@@ -60,6 +60,7 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
       worksFor: {
         "@type": "Organization",
         name: SEO_CONFIG.brandName,
+        logo: `${SEO_CONFIG.domain}/bblogo.png`,
       },
       sameAs: [SEO_CONFIG.instagramUrl],
     },
@@ -98,6 +99,7 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
     worksFor: {
       "@type": "LocalBusiness",
       name: SEO_CONFIG.brandName,
+      logo: `${SEO_CONFIG.domain}/bblogo.png`,
     },
     sameAs: [SEO_CONFIG.instagramUrl],
   };
@@ -145,10 +147,11 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
       "@type": "BeautySalon",
       name: SEO_CONFIG.siteName,
       url: SEO_CONFIG.domain,
+      logo: `${SEO_CONFIG.domain}/bblogo.png`,
     },
     areaServed: "Udaipur, Rajasthan, India",
     description: serviceSchema.description,
-    image: serviceSchema.image ? `${SEO_CONFIG.domain}${serviceSchema.image}` : undefined,
+    image: serviceSchema.image ? `${SEO_CONFIG.domain}${serviceSchema.image}` : `${SEO_CONFIG.domain}/bblogo.png`,
   } : null;
 
   return (

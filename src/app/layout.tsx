@@ -48,6 +48,18 @@ export const metadata: Metadata = {
   authors: [{ name: SEO_CONFIG.artistName }],
   creator: SEO_CONFIG.brandName,
   publisher: SEO_CONFIG.brandName,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/bblogo.png", sizes: "512x512", type: "image/png" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/bblogo.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: ["/bblogo.png"],
+  },
   metadataBase: new URL(SEO_CONFIG.domain),
   alternates: {
     canonical: SEO_CONFIG.domain,
@@ -58,6 +70,12 @@ export const metadata: Metadata = {
     url: SEO_CONFIG.domain,
     siteName: SEO_CONFIG.siteName,
     images: [
+      {
+        url: `${SEO_CONFIG.domain}/bblogo.png`,
+        width: 1252,
+        height: 1252,
+        alt: "Bright & Beauty by Jiya Vadhwani Logo",
+      },
       {
         url: `${SEO_CONFIG.domain}/images/portfolio/img21.jpg`,
         width: 1200,
@@ -72,7 +90,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SEO_CONFIG.defaultTitle,
     description: SEO_CONFIG.defaultDescription,
-    images: [`${SEO_CONFIG.domain}/images/portfolio/img21.jpg`],
+    images: [`${SEO_CONFIG.domain}/bblogo.png`, `${SEO_CONFIG.domain}/images/portfolio/img21.jpg`],
     creator: "@_bright_and_beauty_",
   },
   robots: {
@@ -95,6 +113,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${jakarta.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/bblogo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+      </head>
       <body className="antialiased bg-ivory text-espresso selection:bg-blush selection:text-espresso font-sans">
         {children}
       </body>

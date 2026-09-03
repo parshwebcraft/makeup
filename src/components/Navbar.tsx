@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, MessageCircle, Calendar } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
@@ -42,27 +43,38 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
-            ? "bg-ivory/85 backdrop-blur-md border-b border-champagne/40 py-3 shadow-luxury"
-            : "bg-gradient-to-b from-espresso/40 to-transparent py-5 text-white"
+            ? "bg-ivory/85 backdrop-blur-md border-b border-champagne/40 py-2.5 shadow-luxury"
+            : "bg-gradient-to-b from-espresso/50 to-transparent py-4 text-white"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="#hero" className="group flex flex-col">
-            <span
-              className={`font-serif text-2xl sm:text-3xl tracking-wider font-light uppercase transition-colors duration-300 ${
-                isScrolled ? "text-espresso group-hover:text-gold" : "text-white group-hover:text-champagne-light"
-              }`}
-            >
-              Bright & Beauty
-            </span>
-            <span
-              className={`text-[10px] tracking-[0.25em] uppercase font-sans -mt-1 font-light ${
-                isScrolled ? "text-gold-muted" : "text-champagne/80"
-              }`}
-            >
-              By Jiya Vadhwani
-            </span>
+          {/* Logo with Image & Typography */}
+          <Link href="#hero" className="group flex items-center gap-3">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 overflow-hidden rounded-full border border-gold/40 shadow-sm shrink-0 bg-espresso/30 p-0.5">
+              <Image
+                src="/bblogo.png"
+                alt="Bright & Beauty by Jiya Vadhwani Logo"
+                fill
+                sizes="44px"
+                className="object-contain p-0.5"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span
+                className={`font-serif text-xl sm:text-2xl tracking-wider font-light uppercase transition-colors duration-300 ${
+                  isScrolled ? "text-espresso group-hover:text-gold" : "text-white group-hover:text-champagne-light"
+                }`}
+              >
+                Bright & Beauty
+              </span>
+              <span
+                className={`text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-sans -mt-1 font-light ${
+                  isScrolled ? "text-gold-muted" : "text-champagne/80"
+                }`}
+              >
+                By Jiya Vadhwani
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -128,13 +140,24 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
             >
               <div>
                 <div className="flex justify-between items-center pb-6 border-b border-champagne/40">
-                  <div>
-                    <span className="font-serif text-2xl text-espresso tracking-wide block uppercase">
-                      Bright & Beauty
-                    </span>
-                    <span className="text-xs text-gold font-sans tracking-widest block">
-                      BY JIYA VADHWANI
-                    </span>
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-10 h-10 overflow-hidden rounded-full border border-gold/40 shrink-0 bg-espresso/20 p-0.5">
+                      <Image
+                        src="/bblogo.png"
+                        alt="Bright & Beauty Logo"
+                        fill
+                        sizes="40px"
+                        className="object-contain p-0.5"
+                      />
+                    </div>
+                    <div>
+                      <span className="font-serif text-xl text-espresso tracking-wide block uppercase">
+                        Bright & Beauty
+                      </span>
+                      <span className="text-[10px] text-gold font-sans tracking-widest block">
+                        BY JIYA VADHWANI
+                      </span>
+                    </div>
                   </div>
                   <button
                     onClick={() => setMobileMenuOpen(false)}
@@ -195,9 +218,20 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
 
       {/* Sticky Bottom Bar for Mobile Visitors */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-espresso text-ivory py-3 px-4 shadow-2xl border-t border-gold/30 flex items-center justify-between">
-        <div className="flex flex-col">
-          <span className="text-xs font-serif tracking-wider text-champagne">BRIGHT & BEAUTY</span>
-          <span className="text-[10px] text-ivory/70 font-sans">Titardi, Udaipur</span>
+        <div className="flex items-center gap-2">
+          <div className="relative w-7 h-7 overflow-hidden rounded-full border border-gold/40 shrink-0 bg-espresso/40">
+            <Image
+              src="/bblogo.png"
+              alt="Bright & Beauty Logo"
+              fill
+              sizes="28px"
+              className="object-contain p-0.5"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-xs font-serif tracking-wider text-champagne">BRIGHT & BEAUTY</span>
+            <span className="text-[10px] text-ivory/70 font-sans">Titardi, Udaipur</span>
+          </div>
         </div>
         <button
           onClick={() => onOpenBooking()}
