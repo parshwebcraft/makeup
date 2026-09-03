@@ -9,7 +9,7 @@ export const metadata = generateMetadataObj({
   description:
     "Explore the signature bridal makeup, HD reception, engagement & party glam portfolio by Jiya Vadhwani in Udaipur, Rajasthan.",
   path: "/portfolio",
-  image: "/images/portfolio/ig2.jpg",
+  image: "/images/instagram/ig2.jpg",
 });
 
 export default function PortfolioPage() {
