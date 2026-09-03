@@ -9,7 +9,7 @@ export const metadata = generateMetadataObj({
   description:
     "Frequently asked questions about bridal makeup packages, HD makeup, pricing, booking timeline, and travel for destination weddings in Udaipur, Rajasthan.",
   path: "/faq",
-  image: "/images/portfolio/img21.jpg",
+  image: "/images/portfolio/ig2.jpg",
 });
 
 const aeoFaqs = [

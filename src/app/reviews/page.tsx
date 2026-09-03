@@ -9,7 +9,7 @@ export const metadata = generateMetadataObj({
   description:
     "Read genuine bride reviews and testimonials for Jiya Vadhwani's bridal makeup in Udaipur (The Leela Palace, Jagmandir, Oberoi Udaivilas).",
   path: "/reviews",
-  image: "/images/portfolio/img21.jpg",
+  image: "/images/portfolio/ig2.jpg",
 });
 
 export default function ReviewsPage() {

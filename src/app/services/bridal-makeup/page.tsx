@@ -10,7 +10,7 @@ export const metadata = generateMetadataObj({
   description:
     "Looking for a bridal makeup artist in Udaipur? Jiya Vadhwani offers royal, camera-ready bridal makeup packages in Udaipur, Rajasthan. Basic (₹10,000) & HD (₹15,000).",
   path: "/services/bridal-makeup",
-  image: "/images/portfolio/img21.jpg",
+  image: "/images/portfolio/ig2.jpg",
 });
 
 export default function BridalMakeupPage() {
@@ -45,7 +45,7 @@ export default function BridalMakeupPage() {
           name: "Bridal Makeup Artist in Udaipur",
           description:
             "Luxury royal bridal makeup artistry in Udaipur, Rajasthan by Jiya Vadhwani. Customized skin hydration, HD camera-ready finish, advanced hair styling, extensions, and lehenga draping.",
-          image: "/images/portfolio/img21.jpg",
+          image: "/images/portfolio/ig2.jpg",
         }}
       />
 
@@ -95,7 +95,7 @@ export default function BridalMakeupPage() {
             <div className="lg:col-span-6 relative aspect-[4/5] border border-gold/30 p-3 bg-ivory-cream shadow-luxury">
               <div className="relative w-full h-full overflow-hidden">
                 <Image
-                  src="/images/portfolio/img21.jpg"
+                  src="/images/portfolio/ig2.jpg"
                   alt="Bridal Makeup Artist in Udaipur - Royal Bride by Jiya Vadhwani"
                   fill
                   priority
