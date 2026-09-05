@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Check, Sparkles, Calendar, HeartHandshake, ShieldCheck, MapPin } from "lucide-react";
-import { generateMetadataObj, SEO_CONFIG } from "@/config/seo";
+import { ArrowLeft, Check, Sparkles, Calendar, ShieldCheck, MapPin } from "lucide-react";
+import { generateMetadataObj } from "@/config/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { BRAND_DATA } from "@/data/content";
 
 export const metadata = generateMetadataObj({
-  title: "Bridal Makeup Artist in Udaipur | Bright & Beauty by Jiya Vadhwani",
+  title: "Bridal Makeup Artist in Udaipur | Bright & Beauty",
   description:
-    "Looking for a bridal makeup artist in Udaipur? Jiya Vadhwani offers royal, camera-ready bridal makeup packages in Udaipur, Rajasthan. Basic (₹10,000) & HD (₹15,000).",
+    "Looking for a bridal makeup artist in Udaipur? Bright & Beauty by Jiya Vadhwani offers elegant bridal makeup for weddings and special occasions.",
   path: "/services/bridal-makeup",
   image: "/images/instagram/ig2.jpg",
 });
@@ -96,7 +96,7 @@ export default function BridalMakeupPage() {
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/images/instagram/ig2.jpg"
-                  alt="Bridal Makeup Artist in Udaipur - Royal Bride by Jiya Vadhwani"
+                  alt="Bridal makeup by Jiya Vadhwani in Udaipur"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"

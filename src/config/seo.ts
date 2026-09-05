@@ -1,11 +1,9 @@
-import { BRAND_DATA } from "@/data/content";
-
 export const SEO_CONFIG = {
-  domain: "https://brightandbeautybyjiyavadhwani.com",
+  domain: "https://www.brightandbeautybyjiyavadhwani.com",
   siteName: "Bright & Beauty by Jiya Vadhwani",
-  defaultTitle: "Bright & Beauty | Bridal Makeup Artist in Udaipur | Jiya Vadhwani",
+  defaultTitle: "Bright & Beauty by Jiya Vadhwani | Makeup Artist in Udaipur",
   defaultDescription:
-    "Bright & Beauty by Jiya Vadhwani is a certified luxury bridal makeup artist in Udaipur, Rajasthan. Offering bridal, HD, party, pre-wedding & destination wedding makeup services.",
+    "Bright & Beauty by Jiya Vadhwani is a professional makeup artist in Udaipur specializing in bridal, party, HD and destination wedding makeup.",
   artistName: "Jiya Vadhwani",
   brandName: "Bright & Beauty",
   logo: "/bblogo.png",
@@ -90,9 +88,11 @@ export function generateMetadataObj({
       "HD makeup artist Udaipur",
       "party makeup Udaipur",
       "destination wedding makeup Udaipur",
-      "Jiya Vadhwani makeup artist",
-      "Certified MUA Samaira Sandhu",
+      "Jiya Vadhwani Makeup Artist",
+      "Jiya Vadhwani MUA",
+      "Certified MUA by Samaira Sandhu",
       "Bright & Beauty Udaipur",
+      "Bright and Beauty by Jiya Vadhwani",
     ],
     metadataBase: new URL(SEO_CONFIG.domain),
     alternates: {

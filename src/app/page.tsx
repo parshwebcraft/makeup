@@ -18,6 +18,7 @@ import { FinalCTASection } from "@/components/FinalCTASection";
 import { Footer } from "@/components/Footer";
 import { BookingModal } from "@/components/BookingModal";
 import { JsonLd } from "@/components/JsonLd";
+import { FAQ_ITEMS } from "@/data/content";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -42,6 +43,7 @@ export default function Home() {
         breadcrumbs={[
           { name: "Home", item: "/" },
         ]}
+        faqs={FAQ_ITEMS}
       />
 
       <Navbar onOpenBooking={handleOpenBooking} />

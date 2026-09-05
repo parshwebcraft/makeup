@@ -1,15 +1,27 @@
 import Link from "next/link";
 import { ArrowLeft, Headphones, Phone, Mail, MapPin, MessageCircle, Instagram } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
+import { generateMetadataObj } from "@/config/seo";
+import { JsonLd } from "@/components/JsonLd";
 
-export const metadata = {
-  title: "Support & Help | Bright & Beauty by Jiya Vadhwani",
-  description: "Official support and contact channels for Bright & Beauty clients.",
-};
+export const metadata = generateMetadataObj({
+  title: "Contact Bright & Beauty | Makeup Artist in Udaipur",
+  description:
+    "Contact Bright & Beauty by Jiya Vadhwani for bridal, party, HD and destination wedding makeup bookings in Udaipur.",
+  path: "/support",
+});
 
 export default function SupportPage() {
   return (
-    <main className="min-h-screen bg-ivory text-espresso py-16 px-4 sm:px-6 lg:px-8">
+    <>
+      <JsonLd
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Contact Bright & Beauty", item: "/support" },
+        ]}
+      />
+
+      <main className="min-h-screen bg-ivory text-espresso py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <Link
           href="/"
@@ -24,7 +36,7 @@ export default function SupportPage() {
             <Headphones className="w-5 h-5 text-gold" />
             <span className="text-xs uppercase tracking-[0.25em] text-gold font-medium">Client Assistance</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl text-espresso font-light">Support & Enquiries</h1>
+          <h1 className="font-serif text-3xl sm:text-5xl text-espresso font-light">Contact Bright & Beauty</h1>
           <p className="text-xs text-espresso/60 font-light mt-2">We are here to assist with your wedding & event bookings.</p>
         </div>
 
@@ -94,6 +106,7 @@ export default function SupportPage() {
           </div>
         </div>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

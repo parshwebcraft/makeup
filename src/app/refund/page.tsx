@@ -1,15 +1,27 @@
 import Link from "next/link";
 import { ArrowLeft, RefreshCw } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
+import { generateMetadataObj } from "@/config/seo";
+import { JsonLd } from "@/components/JsonLd";
 
-export const metadata = {
+export const metadata = generateMetadataObj({
   title: "Refund & Cancellation Policy | Bright & Beauty by Jiya Vadhwani",
-  description: "Official refund and cancellation policy for Bright & Beauty makeup bookings.",
-};
+  description:
+    "Refund and cancellation policy for Bright & Beauty makeup bookings, advances, travel and event rescheduling.",
+  path: "/refund",
+});
 
 export default function RefundPage() {
   return (
-    <main className="min-h-screen bg-ivory text-espresso py-16 px-4 sm:px-6 lg:px-8">
+    <>
+      <JsonLd
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Refund & Cancellation Policy", item: "/refund" },
+        ]}
+      />
+
+      <main className="min-h-screen bg-ivory text-espresso py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <Link
           href="/"
@@ -65,6 +77,7 @@ export default function RefundPage() {
           </section>
         </div>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

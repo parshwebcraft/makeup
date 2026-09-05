@@ -88,7 +88,7 @@ export function PortfolioGallery() {
               >
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} ${item.category.toLowerCase()} makeup look by Jiya Vadhwani in Udaipur`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover object-top sm:object-[center_20%] transition-transform duration-700 group-hover:scale-105"

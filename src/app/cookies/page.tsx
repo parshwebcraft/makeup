@@ -1,15 +1,27 @@
 import Link from "next/link";
 import { ArrowLeft, Cookie } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
+import { generateMetadataObj } from "@/config/seo";
+import { JsonLd } from "@/components/JsonLd";
 
-export const metadata = {
+export const metadata = generateMetadataObj({
   title: "Cookie Policy | Bright & Beauty by Jiya Vadhwani",
-  description: "Cookie policy for Bright & Beauty website.",
-};
+  description:
+    "Cookie policy for the Bright & Beauty by Jiya Vadhwani website and its booking enquiry features.",
+  path: "/cookies",
+});
 
 export default function CookiesPage() {
   return (
-    <main className="min-h-screen bg-ivory text-espresso py-16 px-4 sm:px-6 lg:px-8">
+    <>
+      <JsonLd
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Cookie Policy", item: "/cookies" },
+        ]}
+      />
+
+      <main className="min-h-screen bg-ivory text-espresso py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <Link
           href="/"
@@ -59,6 +71,7 @@ export default function CookiesPage() {
           </section>
         </div>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

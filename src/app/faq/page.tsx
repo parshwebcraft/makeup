@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { ArrowLeft, HelpCircle, MessageCircle, Calendar } from "lucide-react";
+import { ArrowLeft, HelpCircle, MessageCircle } from "lucide-react";
 import { generateMetadataObj } from "@/config/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { BRAND_DATA } from "@/data/content";
 
 export const metadata = generateMetadataObj({
-  title: "Bridal Makeup FAQs | Bright & Beauty Jiya Vadhwani Udaipur",
+  title: "Makeup Artist FAQ | Bright & Beauty Udaipur",
   description:
-    "Frequently asked questions about bridal makeup packages, HD makeup, pricing, booking timeline, and travel for destination weddings in Udaipur, Rajasthan.",
+    "Find answers about bridal makeup, party makeup, HD makeup, bookings, services and destination wedding makeup by Bright & Beauty.",
   path: "/faq",
   image: "/images/instagram/ig2.jpg",
 });
@@ -61,7 +61,7 @@ const aeoFaqs = [
   {
     question: "How can I contact Bright & Beauty?",
     answer:
-      "You can contact Bright & Beauty via WhatsApp/Phone at +91 80056 49056, Email at Booking@jiyavadhwani.com, or Instagram @_bright_and_beauty_.",
+      "You can contact Bright & Beauty via WhatsApp/Phone at +91 95213 47419, Email at Booking@jiyavadhwani.com, or Instagram @_bright_and_beauty_.",
   },
 ];
 

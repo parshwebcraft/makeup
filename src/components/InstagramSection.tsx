@@ -43,7 +43,7 @@ export function InstagramSection() {
             >
               <Image
                 src={post.image}
-                alt={`Bright & Beauty Instagram post ${idx + 1}`}
+                alt={`${post.caption} by Bright & Beauty in Udaipur`}
                 fill
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                 className="object-cover object-top sm:object-center transition-transform duration-500 group-hover:scale-105"

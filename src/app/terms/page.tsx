@@ -1,15 +1,27 @@
 import Link from "next/link";
 import { ArrowLeft, ShieldCheck } from "lucide-react";
 import { BRAND_DATA } from "@/data/content";
+import { generateMetadataObj } from "@/config/seo";
+import { JsonLd } from "@/components/JsonLd";
 
-export const metadata = {
+export const metadata = generateMetadataObj({
   title: "Terms & Conditions | Bright & Beauty by Jiya Vadhwani",
-  description: "Terms and conditions for bridal makeup services by Bright & Beauty Jiya Vadhwani, Udaipur.",
-};
+  description:
+    "Terms and conditions for Bright & Beauty by Jiya Vadhwani makeup services and bookings in Udaipur.",
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-ivory text-espresso py-16 px-4 sm:px-6 lg:px-8">
+    <>
+      <JsonLd
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Terms & Conditions", item: "/terms" },
+        ]}
+      />
+
+      <main className="min-h-screen bg-ivory text-espresso py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <Link
           href="/"
@@ -81,6 +93,7 @@ export default function TermsPage() {
           </section>
         </div>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

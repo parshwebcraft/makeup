@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Check, Sparkles, Calendar, MapPin, Plane, ShieldCheck } from "lucide-react";
-import { generateMetadataObj, SEO_CONFIG } from "@/config/seo";
+import { ArrowLeft, Check, Calendar, MapPin, Plane, ShieldCheck } from "lucide-react";
+import { generateMetadataObj } from "@/config/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { BRAND_DATA } from "@/data/content";
 
 export const metadata = generateMetadataObj({
-  title: "Destination Wedding Makeup Artist Rajasthan | Jiya Vadhwani Udaipur",
+  title: "Destination Wedding Makeup Artist | Udaipur & Rajasthan",
   description:
-    "Planning a destination wedding in Udaipur, Jaipur, Jodhpur or worldwide? Book luxury destination wedding makeup artist Jiya Vadhwani for complete bride & entourage styling.",
+    "Destination wedding makeup by Bright & Beauty for brides and wedding celebrations in Udaipur, Rajasthan and destination wedding locations.",
   path: "/services/destination-weddings",
   image: "/images/portfolio/img16.jpg",
 });
@@ -88,7 +88,7 @@ export default function DestinationWeddingsPage() {
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/images/portfolio/img16.jpg"
-                  alt="Destination Wedding Makeup Artist Rajasthan - Bride by Jiya Vadhwani"
+                  alt="Destination wedding makeup by Jiya Vadhwani in Rajasthan"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"

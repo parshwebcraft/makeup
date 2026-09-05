@@ -11,13 +11,17 @@ interface FooterProps {
 
 export function Footer({ onOpenBooking }: FooterProps) {
   const footerNavLinks = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Bridal Makeup", href: "/services/bridal-makeup" },
+    { name: "Party Makeup", href: "/services/party-makeup" },
+    { name: "HD Makeup", href: "/services/hd-makeup" },
+    { name: "Destination Weddings", href: "/services/destination-weddings" },
     { name: "Packages", href: "#packages" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Reviews", href: "#reviews" },
-    { name: "Contact", href: "#contact" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Reviews", href: "/reviews" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Contact", href: "/support" },
   ];
 
   const legalLinks = [

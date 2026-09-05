@@ -39,7 +39,7 @@ export function AboutSection() {
               <div className="absolute -bottom-8 -right-6 w-1/2 aspect-square overflow-hidden border-4 border-ivory shadow-luxury-lg hidden sm:block">
                 <Image
                   src={ABOUT_DATA.studioImage}
-                  alt="Jiya Vadhwani - Makeup Artistry & Styling"
+                  alt="Bright & Beauty makeup studio styling by Jiya Vadhwani in Udaipur"
                   fill
                   sizes="25vw"
                   className="object-cover"

@@ -5,9 +5,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { PortfolioGallery } from "@/components/PortfolioGallery";
 
 export const metadata = generateMetadataObj({
-  title: "Bridal & Party Makeup Portfolio Udaipur | Bright & Beauty Jiya Vadhwani",
+  title: "Makeup Portfolio | Bright & Beauty by Jiya Vadhwani",
   description:
-    "Explore the signature bridal makeup, HD reception, engagement & party glam portfolio by Jiya Vadhwani in Udaipur, Rajasthan.",
+    "Explore bridal, party, HD and destination wedding makeup looks by Bright & Beauty makeup artist Jiya Vadhwani.",
   path: "/portfolio",
   image: "/images/instagram/ig2.jpg",
 });

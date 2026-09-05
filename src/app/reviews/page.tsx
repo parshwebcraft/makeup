@@ -5,9 +5,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 export const metadata = generateMetadataObj({
-  title: "Client Reviews & Testimonials | Bright & Beauty Jiya Vadhwani Udaipur",
+  title: "Reviews | Bright & Beauty by Jiya Vadhwani",
   description:
-    "Read genuine bride reviews and testimonials for Jiya Vadhwani's bridal makeup in Udaipur (The Leela Palace, Jagmandir, Oberoi Udaivilas).",
+    "Read client experiences and makeup reviews for Bright & Beauty by Jiya Vadhwani, a makeup artist in Udaipur.",
   path: "/reviews",
   image: "/images/instagram/ig2.jpg",
 });

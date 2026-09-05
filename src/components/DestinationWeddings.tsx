@@ -15,7 +15,7 @@ export function DestinationWeddings({ onOpenBooking }: DestinationWeddingsProps)
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/portfolio/img16.jpg"
-          alt="Destination Bridal Makeup by Bright & Beauty Jiya Vadhwani"
+          alt="Destination wedding makeup by Bright & Beauty and Jiya Vadhwani"
           fill
           sizes="100vw"
           className="object-cover object-center opacity-30 mix-blend-luminosity filter contrast-125"

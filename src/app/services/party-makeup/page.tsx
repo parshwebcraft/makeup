@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Check, Sparkles, Calendar, MapPin, ShieldCheck } from "lucide-react";
-import { generateMetadataObj, SEO_CONFIG } from "@/config/seo";
+import { generateMetadataObj } from "@/config/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { BRAND_DATA } from "@/data/content";
 
 export const metadata = generateMetadataObj({
-  title: "Party Makeup Artist in Udaipur | Bright & Beauty by Jiya Vadhwani",
+  title: "Party Makeup Artist in Udaipur | Bright & Beauty",
   description:
-    "Book party makeup in Udaipur for sangeet, cocktail, engagement & celebrations. Professional party & sider makeup packages starting at ₹2,500 by Jiya Vadhwani.",
+    "Professional party makeup in Udaipur by Bright & Beauty. Get a polished, personalized makeup look for parties, celebrations and special events.",
   path: "/services/party-makeup",
   image: "/images/portfolio/img1.jpg",
 });
@@ -88,7 +88,7 @@ export default function PartyMakeupPage() {
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/images/portfolio/img1.jpg"
-                  alt="Party Makeup Artist in Udaipur - Pastel Glam by Jiya Vadhwani"
+                  alt="Party makeup by Jiya Vadhwani in Udaipur"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"

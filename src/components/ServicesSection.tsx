@@ -47,7 +47,7 @@ export function ServicesSection({ onOpenBooking }: ServicesSectionProps) {
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-espresso">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} by Bright & Beauty in Udaipur`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover object-top sm:object-[center_10%] transition-transform duration-700 group-hover:scale-105"

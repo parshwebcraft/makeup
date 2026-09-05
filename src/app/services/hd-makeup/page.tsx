@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Check, Sparkles, Calendar, MapPin, ShieldCheck } from "lucide-react";
-import { generateMetadataObj, SEO_CONFIG } from "@/config/seo";
+import { generateMetadataObj } from "@/config/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { BRAND_DATA } from "@/data/content";
 
 export const metadata = generateMetadataObj({
-  title: "HD Makeup Artist in Udaipur | Bright & Beauty by Jiya Vadhwani",
+  title: "HD Makeup Artist in Udaipur | Bright & Beauty",
   description:
-    "What is HD makeup? Book camera-ready HD bridal & party makeup in Udaipur by Jiya Vadhwani (₹15,000 package). Zero flashback, 4K video optimized finish.",
+    "Professional HD makeup in Udaipur by Jiya Vadhwani for weddings, events, photography and special occasions.",
   path: "/services/hd-makeup",
   image: "/images/portfolio/img30.jpg",
 });
@@ -88,7 +88,7 @@ export default function HdMakeupPage() {
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/images/portfolio/img30.jpg"
-                  alt="HD Makeup Artist in Udaipur - Reception Glam by Jiya Vadhwani"
+                  alt="HD makeup artist in Udaipur, reception look by Jiya Vadhwani"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"

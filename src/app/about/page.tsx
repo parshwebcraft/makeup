@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Check, Sparkles, Calendar, Award, ShieldCheck, MapPin } from "lucide-react";
-import { generateMetadataObj, SEO_CONFIG, GEO_ENTITY_STATEMENT } from "@/config/seo";
+import { ArrowLeft, Check, Sparkles, Calendar, Award, MapPin } from "lucide-react";
+import { generateMetadataObj, GEO_ENTITY_STATEMENT } from "@/config/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { BRAND_DATA, ABOUT_DATA } from "@/data/content";
 
 export const metadata = generateMetadataObj({
-  title: "About Jiya Vadhwani | Certified Makeup Artist in Udaipur | Bright & Beauty",
+  title: "About Jiya Vadhwani | Makeup Artist in Udaipur",
   description:
-    "Learn about Jiya Vadhwani, certified professional makeup artist in Udaipur trained by Samaira Sandhu. Specializing in luxury bridal, HD, party & destination wedding makeup.",
+    "Meet Jiya Vadhwani, a certified makeup artist in Udaipur creating elegant bridal, party, HD and destination wedding makeup looks.",
   path: "/about",
-  image: "/images/about/jiya1.jpeg",
+  image: "/images/about/jiya3.jpeg",
 });
 
 export default function AboutPage() {
@@ -67,7 +67,7 @@ export default function AboutPage() {
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src={ABOUT_DATA.image}
-                  alt="Jiya Vadhwani - Certified Makeup Artist in Udaipur"
+                  alt="Jiya Vadhwani, certified makeup artist in Udaipur"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -120,7 +120,7 @@ export default function AboutPage() {
                   <div key={i} className="relative aspect-[3/4] border border-champagne/40 overflow-hidden shadow-md">
                     <Image
                       src={imgSrc}
-                      alt={`Jiya Vadhwani Artist Photo ${i + 1}`}
+                      alt={`Jiya Vadhwani makeup artist studio photo ${i + 1} in Udaipur`}
                       fill
                       sizes="(max-width: 768px) 50vw, 25vw"
                       className="object-cover"

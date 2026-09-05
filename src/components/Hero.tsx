@@ -60,7 +60,7 @@ export function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 0.9, delay: 0.4 }}
           className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-ivory leading-[1.08] max-w-4xl tracking-tight drop-shadow-lg"
         >
-          Luxury Makeup Artistry
+          Professional Makeup Artist in Udaipur
           <span className="block italic text-champagne font-normal font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl mt-2 drop-shadow-md">
             for Your Most Beautiful Moments
           </span>

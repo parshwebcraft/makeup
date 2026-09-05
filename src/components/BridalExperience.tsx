@@ -85,7 +85,7 @@ export function BridalExperience({ onOpenBooking }: BridalExperienceProps) {
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/images/instagram/ig2.jpg"
-                  alt="Udaipur Bridal Experience by Bright & Beauty Jiya Vadhwani"
+                  alt="Bridal makeup experience by Jiya Vadhwani in Udaipur"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 hover:scale-105"

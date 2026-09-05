@@ -1,5 +1,5 @@
 import { SEO_CONFIG, GEO_ENTITY_STATEMENT } from "@/config/seo";
-import { FAQ_ITEMS, SERVICES } from "@/data/content";
+import { SERVICES } from "@/data/content";
 
 interface JsonLdProps {
   breadcrumbs?: { name: string; item: string }[];
@@ -104,6 +104,22 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
     sameAs: [SEO_CONFIG.instagramUrl],
   };
 
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SEO_CONFIG.domain}/#website`,
+    name: SEO_CONFIG.siteName,
+    alternateName: [
+      "Bright & Beauty Udaipur",
+      "Bright and Beauty by Jiya Vadhwani",
+    ],
+    url: SEO_CONFIG.domain,
+    publisher: {
+      "@id": `${SEO_CONFIG.domain}/#business`,
+    },
+    inLanguage: "en-IN",
+  };
+
   const faqSchema = faqs && faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -115,18 +131,7 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
         text: faq.answer,
       },
     })),
-  } : {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: FAQ_ITEMS.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
+  } : null;
 
   const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
     "@context": "https://schema.org",
@@ -163,6 +168,10 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
       />
       {faqSchema && (
         <script
