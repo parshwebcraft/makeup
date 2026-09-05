@@ -97,11 +97,11 @@ export const ABOUT_DATA = {
     "Complete Saree / Lehenga Draping included",
     "Strict hygiene protocols & customized skin preparation",
   ],
-  image: "/images/about/jiya1.jpeg",
+  image: "/images/about/jiya3.jpeg",
   studioImage: "/images/about/jiya2.jpeg",
   artistImages: [
-    "/images/about/jiya1.jpeg",
     "/images/about/jiya2.jpeg",
+    "/images/about/jiya5.jpeg",
     "/images/about/jiya3.jpeg",
     "/images/about/jiya4.jpeg",
   ],
@@ -287,10 +287,10 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: "7",
-    title: "Vibrant Rani Pink Bridal Look",
+    title: "Vibrant Bridal Look",
     category: "Bridal",
     subtitle: "Traditional Gold Highlights & Winged Eyes",
-    image: "/images/portfolio/img26.jpg",
+    image: "/images/portfolio/img26.jpeg",
     location: "Aurika Udaipur",
   },
   {
