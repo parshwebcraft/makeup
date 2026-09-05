@@ -61,7 +61,7 @@ const aeoFaqs = [
   {
     question: "How can I contact Bright & Beauty?",
     answer:
-      "You can contact Bright & Beauty via WhatsApp/Phone at +91 95213 47419, Email at Booking@jiyavadhwani.com, or Instagram @_bright_and_beauty_.",
+      "You can contact Bright & Beauty via WhatsApp/Phone at +91 80056 49056, Email at Booking@jiyavadhwani.com, or Instagram @_bright_and_beauty_.",
   },
 ];
 

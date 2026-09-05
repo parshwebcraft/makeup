@@ -11,8 +11,8 @@ export const SEO_CONFIG = {
   state: "Rajasthan",
   country: "India",
   certification: "Certified MUA by Samaira Sandhu",
-  whatsappPrimary: "+91 95213 47419",
-  whatsappSecondary: "+91 80056 49056",
+  whatsappPrimary: "+91 80056 49056",
+  whatsappSecondary: "+91 95213 47419",
   instagramUrl: "https://www.instagram.com/_bright_and_beauty_/",
   instagramHandle: "@_bright_and_beauty_",
   geoCoordinates: {

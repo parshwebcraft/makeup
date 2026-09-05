@@ -59,9 +59,9 @@ export const BRAND_DATA = {
   logo: "/bblogo.png",
   instagramHandle: "@_bright_and_beauty_",
   instagramUrl: "https://www.instagram.com/_bright_and_beauty_/",
-  whatsappNumber: "919521347419",
-  phoneNumberDisplay: "+91 95213 47419",
-  whatsappUrl: "https://wa.me/919521347419?text=Hi%20Jiya%2C%20I%20found%20Bright%20%26%20Beauty%20online%20and%20would%20like%20to%20enquire%20about%20makeup%20services.",
+  whatsappNumber: "918005649056",
+  phoneNumberDisplay: "+91 80056 49056",
+  whatsappUrl: "https://wa.me/918005649056?text=Hi%20Jiya%2C%20I%20found%20Bright%20%26%20Beauty%20online%20and%20would%20like%20to%20enquire%20about%20makeup%20services.",
   tagline: "Bring Out Your Inner Beauty with Empowering and Inspiring Makeup!",
   followersCount: "10K+",
   postsCount: "400+",
@@ -458,6 +458,6 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq-6",
     question: "How can I check availability for my dates?",
-    answer: "Click 'Book Appointment' or WhatsApp us directly at +91 95213 47419 with your date and location to check Jiya's schedule.",
+    answer: "Click 'Book Appointment' or WhatsApp us directly at +91 80056 49056 with your date and location to check Jiya's schedule.",
   },
 ];

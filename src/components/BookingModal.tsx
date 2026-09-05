@@ -12,16 +12,18 @@ interface BookingModalProps {
   initialService?: string;
 }
 
+const getInitialFormData = (initialService = "") => ({
+  name: "",
+  phone: "",
+  date: "",
+  timeSlot: "Morning (8 AM - 12 PM)",
+  service: initialService || "HD Bridal Package (₹15,000)",
+  location: "",
+  notes: "",
+});
+
 export function BookingModal({ isOpen, onClose, initialService = "" }: BookingModalProps) {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    date: "",
-    timeSlot: "Morning (8 AM - 12 PM)",
-    service: initialService || "HD Bridal Package (₹15,000)",
-    location: "",
-    notes: "",
-  });
+  const [formData, setFormData] = useState(() => getInitialFormData(initialService));
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -30,6 +32,13 @@ export function BookingModal({ isOpen, onClose, initialService = "" }: BookingMo
       setFormData((prev) => ({ ...prev, service: initialService }));
     }
   }, [initialService]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setFormData(getInitialFormData(initialService));
+      setErrors({});
+    }
+  }, [isOpen, initialService]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -84,6 +93,7 @@ Please confirm your availability for my date!`;
     const whatsappUrl = `https://wa.me/${BRAND_DATA.whatsappNumber}?text=${encodedMessage}`;
 
     window.open(whatsappUrl, "_blank");
+    setFormData(getInitialFormData(initialService));
     onClose();
   };
 
@@ -178,7 +188,8 @@ Please confirm your availability for my date!`;
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="+91 80056 49056"
+                placeholder="Client phone number"
+                autoComplete="tel"
                 className={`w-full bg-[#231B18] border ${
                   errors.phone ? "border-red-400" : "border-gold/30 focus:border-gold"
                 } text-ivory text-sm px-4 py-2.5 outline-none transition-colors rounded-none placeholder:text-ivory/40`}
