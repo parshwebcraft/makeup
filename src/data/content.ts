@@ -114,7 +114,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Bridal Makeup Packages",
     tagline: "Timeless Bridal Perfection",
     description: "Tailored bridal packages designed around your features, outfit, and wedding aesthetic for long-lasting comfort and royal elegance.",
-    image: "/images/instagram/ig1.jpg",
+    image: "/images/instagram/ig1.jpeg",
     features: [
       "High-End & Premium International Products",
       "Advanced Hair Styling & Hair Extensions",
@@ -242,7 +242,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     title: "Royal Pastel Bridal Artistry",
     category: "Bridal",
     subtitle: "Kundan Statement Jewelry & Radiant Finish",
-    image: "/images/instagram/ig1.jpg",
+    image: "/images/instagram/ig1.jpeg",
     location: "The Leela Palace, Udaipur",
   },
   {
@@ -381,7 +381,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const INSTAGRAM_POSTS: InstagramPost[] = [
   {
     id: "ig-1",
-    image: "/images/instagram/ig1.jpg",
+    image: "/images/instagram/ig1.jpeg",
     likes: "1,840",
     comments: "124",
     caption: "Royal pastel bridal glow for our stunning bride at The Leela Palace ✨ @_bright_and_beauty_",
