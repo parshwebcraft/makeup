@@ -79,13 +79,13 @@ export function BookingModal({ isOpen, onClose, initialService = "" }: BookingMo
 
     const messageText = `Hi Jiya Vadhwani! I found Bright & Beauty online and would like to book an appointment:
 
-👤 *Name*: ${formData.name.trim()}
-📞 *Phone*: ${formData.phone.trim()}
-📅 *Event Date*: ${formData.date}
-⏰ *Preferred Time*: ${formData.timeSlot}
-✨ *Package / Service*: ${formData.service}
-📍 *Venue/Location*: ${formData.location.trim() || "Udaipur"}
-${formData.notes.trim() ? `💬 *Notes*: ${formData.notes.trim()}` : ""}
+*Name*: ${formData.name.trim()}
+*Phone*: ${formData.phone.trim()}
+*Event Date*: ${formData.date}
+*Preferred Time*: ${formData.timeSlot}
+*Package / Service*: ${formData.service}
+*Venue/Location*: ${formData.location.trim() || "Udaipur"}
+${formData.notes.trim() ? `*Notes*: ${formData.notes.trim()}` : ""}
 
 Please confirm your availability for my date!`;
 
