@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SEO_CONFIG } from "@/config/seo";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
@@ -122,6 +123,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>
       <body className="antialiased bg-ivory text-espresso selection:bg-blush selection:text-espresso font-sans">
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
