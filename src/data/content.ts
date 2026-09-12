@@ -111,16 +111,16 @@ export const ABOUT_DATA = {
 export const SERVICES: ServiceItem[] = [
   {
     id: "bridal",
-    title: "Bridal Makeup Packages",
-    tagline: "Timeless Bridal Perfection",
-    description: "Tailored bridal packages designed around your features, outfit, and wedding aesthetic for long-lasting comfort and royal elegance.",
+    title: "Cocktail",
+    tagline: "Polished Evening Glam",
+    description: "Elegant cocktail makeup crafted for receptions, engagement evenings, sangeet nights, and refined celebration looks.",
     image: "/images/instagram/ig1.jpeg",
     features: [
-      "High-End & Premium International Products",
-      "Advanced Hair Styling & Hair Extensions",
-      "Hair Accessories included",
-      "Saree / Lehenga Draping",
-      "HD Finish Makeup Options",
+      "Soft glam to bold evening looks",
+      "Long-lasting HD base for event lighting",
+      "Defined eyes, sculpted skin & polished lips",
+      "Hair styling and draping support",
+      "Premium products for comfortable wear",
     ],
     packages: [
       {
@@ -189,15 +189,15 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "pre-wedding",
-    title: "Pre-Wedding Shoot Makeup",
-    tagline: "Camera-Ready Outdoor Glam",
-    description: "Flawless photography makeup crafted for outdoor light, location changes, and long-lasting pre-wedding shoots.",
+    title: "Bridal makeup",
+    tagline: "Timeless Bridal Glow",
+    description: "Graceful bridal makeup designed around your outfit, jewelry, skin tone, and wedding-day vision for a long-lasting elegant finish.",
     image: "/images/instagram/ig2.jpg",
     features: [
-      "Full Day & Multi-Day Shoot Coverage",
-      "Touch-up Support & Hair Styling",
-      "Outfit Change Adjustments",
-      "HD Camera Flashback-Proof",
+      "Customized bridal skin preparation",
+      "HD camera-ready finish",
+      "Advanced hair styling support",
+      "Saree / lehenga draping assistance",
     ],
     packages: [
       {
@@ -239,7 +239,7 @@ export const TERMS_AND_CONDITIONS = [
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: "1",
-    title: "Royal Pastel Bridal Artistry",
+    title: "Cocktail",
     category: "Bridal",
     subtitle: "Kundan Statement Jewelry & Radiant Finish",
     image: "/images/instagram/ig1.jpeg",
@@ -247,7 +247,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: "2",
-    title: "High Fashion Model Editorial",
+    title: "Bridal Makeup",
     category: "Destination",
     subtitle: "Smokey Eye & Sculpted Golden Glow",
     image: "/images/instagram/ig2.jpg",
@@ -263,7 +263,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: "4",
-    title: "Opulent Pink & Antique Gold",
+    title: "Sangeet",
     category: "HD",
     subtitle: "High-Definition Zero Flashback Finish",
     image: "/images/instagram/ig4.jpg",
@@ -271,25 +271,25 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: "5",
-    title: "Sangeet Glam & Sleek Waves",
+    title: "Sangeet",
     category: "Party",
-    subtitle: "Bronze Shimmer & Glossy Nude Lip",
+    subtitle: "Bronze Shimmer, Soft Waves & Celebration Glam",
     image: "/images/instagram/ig5.jpg",
     location: "Chunda Palace, Udaipur",
   },
   {
     id: "6",
-    title: "Traditional Heritage Portrait",
-    category: "Bridal",
-    subtitle: "Nath & Mathapatti Precision Detailing",
+    title: "Sides party Makeup",
+    category: "Party",
+    subtitle: "Elegant Family & Guest Makeup Look",
     image: "/images/instagram/ig6.jpg",
     location: "Fateh Garh Resort, Udaipur",
   },
   {
     id: "7",
-    title: "Vibrant Bridal Look",
-    category: "Bridal",
-    subtitle: "Traditional Gold Highlights & Winged Eyes",
+    title: "Groom Mom",
+    category: "Party",
+    subtitle: "Graceful Family Wedding Makeup",
     image: "/images/portfolio/img26.jpeg",
     location: "Aurika Udaipur",
   },
