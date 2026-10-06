@@ -68,14 +68,15 @@ export const BRAND_DATA = {
 };
 
 export const HERO_DATA = {
-  badge: "Certified MUA by Samaira Sandhu",
+  badge: "Certified by Samaira Sandhu Academy | Udaipur-Based | Available for Destination Weddings",
   titleLine1: "Bright & Beauty",
   titleLine2: "Luxury Makeup Artistry",
   subtitle: "Bring Out Your Inner Beauty with Empowering and Inspiring Makeup",
-  servicesOverview: "Bridal Makeup • Party Makeup • HD Makeup • Destination Wedding Makeup",
+  servicesOverview:
+    "Create a bridal or occasion look that feels beautifully you. Bright & Beauty by Jiya Vadhwani is a professional makeup artist in Udaipur specializing in bridal makeup, HD makeup, party makeup and destination wedding makeup, with every look tailored to your features, skin tone, outfit and personal style.",
   location: "Titardi, Udaipur, Rajasthan",
   ctaPrimary: "Book Your Appointment",
-  ctaSecondary: "View Portfolio",
+  ctaSecondary: "View Bridal Looks",
   heroImage: "/images/instagram/ig2.jpg",
 };
 
@@ -87,9 +88,9 @@ export const TRUST_STATS = [
 ];
 
 export const ABOUT_DATA = {
-  heading: "Bring Out Your Inner Beauty",
-  paragraph1: "Thank you for considering Bright & Beauty for your special occasion. With a passion for creating timeless bridal and occasion looks, Jiya Vadhwani offers luxury makeup services tailored to bring out the best version of you.",
-  paragraph2: "Trained under the legendary Samaira Sandhu, Jiya combines international technique with rich cultural aesthetics to enhance your natural features without heavy masking. Whether it is an opulent palace wedding at Lake Pichola or a pre-wedding shoot, every look is crafted to withstand climate, emotions, and 4K HD camera lenses.",
+  heading: "Personalized Makeup for Brides, Celebrations & Special Moments in Udaipur",
+  paragraph1: "Every face is different, and your makeup should be too. At Bright & Beauty by Jiya Vadhwani, we create makeup looks around your individual features, skin tone, outfit, jewellery and personal style. Whether you're getting ready for your wedding, engagement, sangeet, party or pre-wedding shoot, the goal is to create a look that makes you feel confident, comfortable and beautifully yourself.",
+  paragraph2: "From natural and soft-glam looks to defined bridal and HD makeup, every style is thoughtfully adapted to the occasion and the way you want to be seen. Based in Udaipur, Bright & Beauty offers bridal makeup, party makeup, HD makeup and destination wedding makeup for women looking to create memorable looks for their most special occasions.",
   highlights: [
     "Certified MUA by Samaira Sandhu Academy",
     "High-End & Premium International Products",

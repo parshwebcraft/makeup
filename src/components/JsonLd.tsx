@@ -1,5 +1,4 @@
 import { SEO_CONFIG, GEO_ENTITY_STATEMENT } from "@/config/seo";
-import { SERVICES } from "@/data/content";
 
 interface JsonLdProps {
   breadcrumbs?: { name: string; item: string }[];
@@ -15,9 +14,9 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
-    "@id": `${SEO_CONFIG.domain}/#business`,
+    "@id": `${SEO_CONFIG.domain}/#beautysalon`,
     name: SEO_CONFIG.siteName,
-    alternateName: "Bright & Beauty Makeup Studio",
+    alternateName: "Bright & Beauty",
     url: SEO_CONFIG.domain,
     logo: `${SEO_CONFIG.domain}/bblogo.png`,
     image: `${SEO_CONFIG.domain}/bblogo.png`,
@@ -38,6 +37,23 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
       latitude: SEO_CONFIG.geoCoordinates.latitude,
       longitude: SEO_CONFIG.geoCoordinates.longitude,
     },
+    hasMap: SEO_CONFIG.googleMapsUrl,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "09:00",
+        closes: "21:00",
+      },
+    ],
     areaServed: [
       {
         "@type": "City",
@@ -64,19 +80,82 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
       },
       sameAs: [SEO_CONFIG.instagramUrl],
     },
+    employee: {
+      "@type": "Person",
+      name: "Jiya Vadhwani",
+      jobTitle: "Lead Makeup Artist",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.7",
+      reviewCount: "23",
+      bestRating: "5",
+      worstRating: "1",
+    },
     sameAs: [SEO_CONFIG.instagramUrl],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Bridal & Beauty Makeup Services",
-      itemListElement: SERVICES.map((service, index) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: service.title,
-          description: service.description,
+      name: "Makeup Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Bridal Makeup",
+            areaServed: {
+              "@type": "City",
+              name: "Udaipur",
+            },
+          },
         },
-        position: index + 1,
-      })),
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Party Makeup",
+            areaServed: {
+              "@type": "City",
+              name: "Udaipur",
+            },
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "HD Makeup",
+            areaServed: {
+              "@type": "City",
+              name: "Udaipur",
+            },
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Destination Wedding Makeup",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Family & Guest Makeup",
+            areaServed: {
+              "@type": "City",
+              name: "Udaipur",
+            },
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Pre-Wedding Shoot Makeup",
+          },
+        },
+      ],
     },
   };
 
@@ -115,7 +194,7 @@ export function JsonLd({ breadcrumbs, faqs, serviceSchema }: JsonLdProps) {
     ],
     url: SEO_CONFIG.domain,
     publisher: {
-      "@id": `${SEO_CONFIG.domain}/#business`,
+      "@id": `${SEO_CONFIG.domain}/#beautysalon`,
     },
     inLanguage: "en-IN",
   };

@@ -1,9 +1,9 @@
 export const SEO_CONFIG = {
   domain: "https://www.brightandbeautybyjiyavadhwani.com",
   siteName: "Bright & Beauty by Jiya Vadhwani",
-  defaultTitle: "Bright & Beauty by Jiya Vadhwani | Makeup Artist in Udaipur",
+  defaultTitle: "Makeup Artist in Udaipur: Bridal Makeup Artist | Jiya Vadhwani",
   defaultDescription:
-    "Bright & Beauty by Jiya Vadhwani is a professional makeup artist in Udaipur specializing in bridal, party, HD and destination wedding makeup.",
+    "Jiya Vadhwani is a bridal makeup artist in Udaipur offering personalized bridal and occasion makeup services for a flawless, elegant look on your special day.",
   artistName: "Jiya Vadhwani",
   brandName: "Bright & Beauty",
   logo: "/bblogo.png",
@@ -20,13 +20,14 @@ export const SEO_CONFIG = {
     longitude: 73.7125,
   },
   address: {
-    streetAddress: "Titardi",
+    streetAddress: "House no.14, Kola Magri, Titrdi, Sector 9",
     addressLocality: "Udaipur",
     addressRegion: "Rajasthan",
-    postalCode: "313002",
+    postalCode: "313001",
     addressCountry: "IN",
   },
-  priceRange: "₹2,500 - ₹15,000",
+  priceRange: "₹10,000–₹15,000+",
+  googleMapsUrl: "https://share.google/fbYQPRzcPv92sGVmc",
 };
 
 export interface KeywordMapItem {
@@ -61,7 +62,7 @@ export const KEYWORD_STRATEGY_MAP: KeywordMapItem[] = [
 ];
 
 export const GEO_ENTITY_STATEMENT =
-  "Bright & Beauty is the luxury makeup artistry brand of Jiya Vadhwani, a certified professional makeup artist trained under Samaira Sandhu, based in Titardi, Udaipur, Rajasthan, India. Bright & Beauty specializes in bridal makeup packages, camera-ready HD makeup, party & guest makeup, pre-wedding shoots, and destination wedding travels across Rajasthan and worldwide.";
+  "Bright & Beauty by Jiya Vadhwani is a professional bridal makeup artist in Udaipur offering bridal makeup, party makeup, HD makeup, destination wedding makeup and makeup services for special occasions.";
 
 export function generateMetadataObj({
   title,
